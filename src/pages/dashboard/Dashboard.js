@@ -241,7 +241,7 @@ function Dashboard() {
     <Layout header={false} >
       <Box sx={styles.root}>
         <Box sx={{ ...flexbetween }}>
-          <Box component='img' sx={{ width: '40px', mt: '10px' }} src={logo} ></Box>
+          <Box component='img' sx={{ width: '60px', }} src={logo} ></Box>
           <NavLink component={NavLink}>
             <Box component='img' sx={{ width: '120px' }} src={download} ></Box>
           </NavLink>
@@ -937,11 +937,11 @@ function Dashboard() {
               </DialogContent>
             </Dialog>
           )} */}
-          <MyModal />
+          {/* <MyModal /> */}
         </Container>
       </Box>
       <CustomCircularProgress isLoading={isLoading || isLoading} />
-    </Layout>
+    </Layout >
   );
 }
 

@@ -141,14 +141,15 @@
   font-weight: 900 !important;
 }
 
-.err .css-16n1ayq-MuiFormControl-root>div {
-  background-color: transparent !important;
-}
-
 .w95 {
   width: 95% !important;
   margin-left: 2.5% !important;
 }
+
+.err .css-16n1ayq-MuiFormControl-root>div {
+  background-color: transparent !important;
+}
+
 
 .w {
   color: white !important;

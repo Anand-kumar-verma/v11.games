@@ -411,7 +411,7 @@ function Wallet() {
           </Dialog>
         )} */}
         <CustomCircularProgress isLoading={isLoading} />
-        <MyModal />
+        {/* <MyModal /> */}
       </Container>
     </Layout>
   );

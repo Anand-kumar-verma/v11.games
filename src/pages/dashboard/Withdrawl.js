@@ -569,7 +569,7 @@ function Withdrawl() {
                   color: theme.palette.primary.main,
                 }}
               >
-                ₹ 110.00 - ₹ 50000.00 .{" "}
+                ₹ 500.00 - ₹ 50000.00 .{" "}
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" mt={1}>

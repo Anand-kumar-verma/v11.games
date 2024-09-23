@@ -138,7 +138,7 @@ function Activity() {
             WINSTREAK 2X PRIZE HAPPY HOUR
           </Typography>
         </Box>
-        <MyModal />
+        {/* <MyModal /> */}
       </Stack>
     </Layout >
   );

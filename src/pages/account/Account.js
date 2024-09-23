@@ -461,7 +461,7 @@ function Account() {
           </Dialog>
         )} */}
         <CustomCircularProgress isLoading={isLoading} />
-        <MyModal />
+        {/* <MyModal /> */}
       </Container>
     </Layout>
   );

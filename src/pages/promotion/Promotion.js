@@ -476,7 +476,7 @@ function Promotion() {
             </div>
           </Dialog>
         )} */}
-        <MyModal />
+        {/* <MyModal /> */}
       </Container>
     </Layout>
   );
