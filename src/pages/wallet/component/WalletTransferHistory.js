@@ -1,6 +1,4 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import {
   Box,
   Button,
@@ -12,31 +10,33 @@ import {
 import moment from "moment";
 import * as React from "react";
 import { useQuery } from "react-query";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
-import { bgdarkgray, bggrad, zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext } from "../../../Shared/color";
+import {
+  bgdarkgray,
+  bggrad,
+  zubgback,
+  zubgbackgrad,
+  zubgmid,
+  zubgtext,
+} from "../../../Shared/color";
 import deposit from "../../../assets/check.png";
 import Layout from "../../../component/Layout/Layout";
-import {
-  TransferwithdrawlHistoryFunction,
-} from "../../../services/apicalling";
+import { withdrawlHistoryFunction } from "../../../services/apicalling";
 import theme from "../../../utils/theme";
 
-function WalletTransferHistory() {
+function WithdravalHistory() {
   const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-  };
   const { isLoading, data } = useQuery(
-    ["tranfer_history"],
-    () => TransferwithdrawlHistoryFunction(),
+    ["deposit_history"],
+    () => withdrawlHistoryFunction(),
     {
       refetchOnMount: false,
       refetchOnReconnect: false,
-      refetchOnWindowFocus: false
+      refetchOnWindowFocus: false,
     }
   );
-  const res = data?.data?.data || []
+  const res = data?.data?.data;
 
   return (
     <Layout>
@@ -51,7 +51,6 @@ function WalletTransferHistory() {
         className="no-scrollbar"
       >
         <CustomCircularProgress isLoading={isLoading} />
-
         <Box>
           <Box
             sx={{
@@ -61,14 +60,13 @@ function WalletTransferHistory() {
               mt: 9,
             }}
           >
-            <Stack direction="row" sx={{ alignItems: "center", mb: "20px" }}>
+            <Stack direction="row" sx={{ alignItems: "center", mb: 3 }}>
               <Box component="img" src={deposit} width={30}></Box>
               <Typography
                 variant="body1"
-                color="initial"
-                sx={{ fontSize: "15px ", color: 'white', ml: "10px" }}
+                sx={{ fontSize: "15px ", color: "white", ml: "10px" }}
               >
-                Wallet Transfer history
+                Withdrawal history
               </Typography>
             </Stack>
             {res?.map((i) => {
@@ -91,11 +89,27 @@ function WalletTransferHistory() {
                     }}
                   >
                     <Box>
-                      <Button sx={{ background: bgdarkgray, color: 'white', textTransform: "capitalize" }} className="!text-green-500">
-                        Success
+                      <Button
+                        sx={{
+                          background: bgdarkgray,
+                          color: "white",
+                          textTransform: "capitalize",
+                        }}
+                      >
+                        Withdrawal
                       </Button>
                     </Box>
                     <Box>
+                      <Button
+                        sx={{ color: "green", textTransform: "capitalize" }}
+                        className={`${
+                          i?.tr15_status === "Success"
+                            ? "!text-green-700"
+                            : "!text-red-500"
+                        }`}
+                      >
+                        {i?.tr15_status}
+                      </Button>
                       <IconButton>
                         <ArrowForwardIcon sx={{ color: zubgtext }} />
                       </IconButton>
@@ -105,85 +119,82 @@ function WalletTransferHistory() {
                   <Stack
                     direction="row"
                     sx={{
-                      mb: "10px",
                       alignItems: "center",
                       justifyContent: "space-between",
                       "&>p": { color: zubgtext },
                     }}
                   >
-                    <Typography variant="body1" color="initial">
-                      Balance
-                    </Typography>
-                    <Typography variant="body1" color="initial">
-                      ₹ {i?.l01_amount}
+                    <Typography variant="body1">Balance</Typography>
+                    <Typography variant="body1">₹ {i?.tr15_amt}</Typography>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      "&>p": { color: zubgtext },
+                    }}
+                  >
+                    <Typography variant="body1">Date/Time</Typography>
+                    <Typography variant="body1">
+                      {moment(i?.date)?.format("DD-MM-YYYY")}{" "}
+                      {moment(i?.date)?.format("HH:mm:ss")}
                     </Typography>
                   </Stack>
                   <Stack
                     direction="row"
                     sx={{
-                      mb: "10px",
                       alignItems: "center",
                       justifyContent: "space-between",
                       "&>p": { color: zubgtext },
                     }}
                   >
-                    <Typography variant="body1" color="initial">
-                      Date/Time
-                    </Typography>
-                    <Typography variant="body1" color="initial">
-                      {moment(i?.l01_date)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.l01_date)?.format("HH:mm:ss")}
-                    </Typography>
+                    <Typography variant="body1">Status</Typography>
+                    <Typography variant="body1">{i?.tr15_status} </Typography>
                   </Stack>
-                  <Stack
-                    direction="row"
-                    sx={{
-                      mb: "10px",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      "&>p": { color: zubgtext },
-                    }}
-                  >
-                    <Typography variant="body1" color="initial">
-                      Status
-                    </Typography>
-                    <Typography variant="body1" color="initial">
-                      Success
-                    </Typography>
-                  </Stack>
-
-                  <Stack
-                    direction="row"
-                    sx={{
-
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      "&>p": { color: zubgtext },
-                    }}
-                  >
-                    <Typography variant="body1" color="initial">
-                      Trans number
-                    </Typography>
+                  {i?.approve_date !== null && i?.approve_date !== "" && (
                     <Stack
                       direction="row"
                       sx={{
-
                         alignItems: "center",
                         justifyContent: "space-between",
                         "&>p": { color: zubgtext },
                       }}
                     >
-                      <Typography variant="body1" color="initial">
-                        {i?.["101_transaction_no"]}
+                      <Typography variant="body1">Success Date/Time</Typography>
+                      <Typography variant="body1" className="!text-green-700">
+                        {moment(i?.approve_date)?.format("DD-MM-YYYY")}{" "}
+                        {moment(i?.approve_date)?.format("HH:mm:ss")}
                       </Typography>
-                      <IconButton>
+                    </Stack>
+                  )}
+                  <Stack
+                    direction="row"
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      "&>p": { color: zubgtext },
+                    }}
+                  >
+                    <Typography variant="body1">Trans number</Typography>
+                    <Stack
+                      direction="row"
+                      sx={{
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        "&>p": { color: zubgtext },
+                      }}
+                    >
+                      <Typography variant="body1">{i?.tr15_trans}</Typography>
+                      {/* <IconButton>
                         <ContentCopyIcon sx={{ color: zubgtext }} />
-                      </IconButton>
+                      </IconButton> */}
                     </Stack>
                   </Stack>
                 </Box>
               );
             })}
+            {/* <Button sx={style.paytmbtntwo}>All history</Button> */}
           </Box>
         </Box>
       </Container>
@@ -191,7 +202,7 @@ function WalletTransferHistory() {
   );
 }
 
-export default WalletTransferHistory;
+export default WithdravalHistory;
 
 const style = {
   header: {
@@ -217,7 +228,7 @@ const style = {
     minHeight: "15vh",
     background: zubgmid,
     borderRadius: "10px",
-    mb: "10px",
+
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -232,7 +243,7 @@ const style = {
     height: "15vh",
     background: zubgmid,
     borderRadius: "10px",
-    mb: "10px",
+
     "&>p": {
       color: "white",
       fontSize: "12px",
@@ -272,7 +283,6 @@ const style = {
     "&:hover": { background: zubgbackgrad, border: "1px solid transparent" },
   },
   rechargeinstext: {
-    mb: "10px",
     alignItems: "center",
     justifyContent: "start",
     "&>p": { marginLeft: "10px", color: "white !important", fontSize: "14px" },

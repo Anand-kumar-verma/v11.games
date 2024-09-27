@@ -1,5 +1,4 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import {
   Box,
   Button,
@@ -11,13 +10,12 @@ import {
 import moment from "moment";
 import * as React from "react";
 import { useQuery } from "react-query";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
 import { bgdarkgray, bggrad, zubgback, zubgbackgrad, zubgmid, zubgtext } from "../../Shared/color";
 import deposit from "../../assets/check.png";
 import Layout from "../../component/Layout/Layout";
 import { withdrawlHistoryUSdtFunction } from "../../services/apicalling";
-import theme from "../../utils/theme";
 
 function WithdrawalHistoryUSdt() {
   const navigate = useNavigate();
@@ -103,12 +101,12 @@ function WithdrawalHistoryUSdt() {
                     <Box>
                       <Button
                         sx={{ color: "green", textTransform: "capitalize" }}
-                        className={`${i?.m_w_status === "Approve"
+                        className={`${i?.tr15_status === "Approve"
                           ? "!text-green-500 !text-[15px]"
                           : "!text-red-500 !text-[15px]"
                           }`}
                       >
-                        {i?.m_w_status}
+                        {i?.tr15_status}
                       </Button>
                       <IconButton>
                         <ArrowForwardIcon sx={{ color: zubgtext }} />
@@ -119,7 +117,7 @@ function WithdrawalHistoryUSdt() {
                   <Stack
                     direction="row"
                     sx={{
-                      mb: "5px",
+                      mt: "10px",
                       alignItems: "center",
                       justifyContent: "space-between",
                       "&>p": { color: zubgtext },
@@ -130,30 +128,14 @@ function WithdrawalHistoryUSdt() {
                     </Typography>
                     <Typography variant="body1" color="initial" className="!text-[15px]">
                       {/* ₹  */}
-                      {i?.m_w_amount}
+                      {i?.tr15_amt}
                     </Typography>
                   </Stack>
+                
                   <Stack
                     direction="row"
                     sx={{
-                      mb: "5px",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      "&>p": { color: zubgtext },
-                    }}
-                  >
-                    <Typography variant="body1" color="initial" className="!text-[15px]">
-                      Date/Time
-                    </Typography>
-                    <Typography variant="body1" color="initial" className="!text-[15px]">
-                      {moment(i?.m_w_reqdate)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.m_w_reqdate)?.format("HH:mm:ss")}
-                    </Typography>
-                  </Stack>
-                  <Stack
-                    direction="row"
-                    sx={{
-                      mb: "5px",
+                      my: "5px",
                       alignItems: "center",
                       justifyContent: "space-between",
                       "&>p": { color: zubgtext },
@@ -163,26 +145,10 @@ function WithdrawalHistoryUSdt() {
                       Status
                     </Typography>
                     <Typography variant="body1" color="initial" className="!text-[15px]">
-                      {i?.m_w_crypto_status}{" "}
+                      {i?.tr15_status}{" "}
                     </Typography>
                   </Stack>
-                  {i?.success_date !== null && i?.success_date !== "" && <Stack
-                    direction="row"
-                    sx={{
-                      mb: "5px",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      "&>p": { color: zubgtext },
-                    }}
-                  >
-                    <Typography variant="body1" color="initial" className="!text-[15px]">
-                      Success D/T
-                    </Typography>
-                    <Typography variant="body1" color="initial" className="zubgtext !text-[15px]" >
-                      {moment(i?.success_date)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.success_date)?.format("HH:mm:ss")}
-                    </Typography>
-                  </Stack>}
+                 
                   <Stack
                     direction="row"
                     sx={{
@@ -205,7 +171,7 @@ function WithdrawalHistoryUSdt() {
                       }}
                     >
                       <Typography variant="body1" color="initial" className="!text-[15px]">
-                        {i?.m_w_trans_id}
+                        {i?.tr15_w_id}
                       </Typography>
 
                       {/* <IconButton>
@@ -224,7 +190,7 @@ function WithdrawalHistoryUSdt() {
                     }}
                   >
                     <Typography variant="body1" color="initial" className="!text-[15px]">
-                      Address
+                      USDT Type
                     </Typography>
                     <Stack
                       direction="row"
@@ -236,12 +202,28 @@ function WithdrawalHistoryUSdt() {
                       }}
                     >
                       <Typography variant="body1" color="initial" className="!text-[15px] " >
-                        <p>   {i?.withdrawal_add?.substring(0, 20)}</p>
-                        <p>
-                          {i?.withdrawal_add?.substring(20)}
-                        </p>
+                        <p>   {i?.usdt_type}</p>
+                       
                       </Typography>
                     </Stack>
+                    
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    sx={{
+                      mb: "5px",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      "&>p": { color: zubgtext },
+                    }}
+                  >
+                    <Typography variant="body1" color="initial" className="!text-[15px]">
+                      Date/Time
+                    </Typography>
+                    <Typography variant="body1" color="initial" className="!text-[15px]">
+                      {moment(i?.tr15_date)?.format("DD-MM-YYYY")}{" "}
+                      {moment(i?.tr15_date)?.format("HH:mm:ss")}
+                    </Typography>
                   </Stack>
                 </Box>
               );

@@ -48,25 +48,7 @@ function WinFiveMin({ gid }) {
     setdialog_type(randomType);
     setapply_bit_dialog_box(true);
   };
-  // React.useEffect(() => {
-  //   if (gid === "1") {
-  //     if (Number(timing) <= 10) {setapply_bit_dialog_box(false)
-  //       fk.handleReset()
-  //     };
-  //   } else if (gid === "2") {
-  // if (Number(String(timing)?.split("_")?.[0]) === 0) {
-  //   if (Number(String(timing)?.split("_")?.[1]) <= 10) {setapply_bit_dialog_box(false)
-  //     fk.handleReset()
-  //   };
-  // }
-  //   } else {
-  //     if (Number(String(timing)?.split("_")?.[0]) === 0) {
-  //       if (Number(String(timing)?.split("_")?.[1]) <= 10) {setapply_bit_dialog_box(false)
-  //         fk.handleReset()
-  //       };
-  //     }
-  //   }
-  // }, [timing]);
+ 
 
   return (
     <Box className="mainBox">

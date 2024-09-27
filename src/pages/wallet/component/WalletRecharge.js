@@ -461,13 +461,7 @@ function WalletRecharge() {
 
   if (deposit_req_data) {
     window.open(deposit_req_data);
-    // return (
-    //   <QRScreen
-    //     callBackResponse={callBackResponse}
-    //     deposit_req_data={deposit_req_data}
-    //     show_time={show_time}
-    //   />
-    // );
+  
   } React.useEffect(() => {
     if (paymentType === "UPI" && fk.values.amount > 1000) {
       setSelectedGateway("Gateway1");
@@ -500,7 +494,11 @@ function WalletRecharge() {
         }}
       >
         <Box sx={style.header}>
-          <Box component={NavLink} onClick={goBack}>
+          <Box  onClick={() => {
+              setDeposit_req_data(null);
+              navigate('/account')
+            }
+            }>
             <KeyboardArrowLeftOutlinedIcon />
           </Box>
           <Typography variant="body1" color="initial">
@@ -590,7 +588,7 @@ function WalletRecharge() {
               <img style={{ width: '50px' }} src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" alt="" />
             </div>
             <div class="visa_logo">
-              <Box component={'img'} src={logo1} sx={{ width: '45px' }}></Box>
+              <Box component={'img'} src={logo1} sx={{ width: '90px' }}></Box>
             </div>
           </Stack>
         </Box>
@@ -601,74 +599,19 @@ function WalletRecharge() {
               UPI
             </Typography>
           </Box>
-          <Box sx={{ width: '48%', background: '#FFFFFF', borderRadius: "5px" }} className="fccc" component={NavLink} onClick={() => setPaymentType("USDT")}>
+          <Box sx={{ width: '48%', background: '#FFFFFF', borderRadius: "5px" }} className="fccc"  onClick={() => navigate('/rechargeusdt')}>
             <Box component="img" src={usdt} sx={{ width: "100%", height: '55px', borderRadius: "10px", pt: 1, px: 1, }}></Box>
             <Typography className="fp13 " sx={{ fontWeight: 'bolder', borderRadius: "0px 0px  5px 5px", background: bggrad, width: '100%', py: 1, textAlign: 'center', fontFamily: 'roboto !important' }} mt={1}>
               USDT
             </Typography>
           </Box>
-          <Box sx={{ width: '48%', background: '#F0F0F0', borderRadius: "5px", mt: 2, }} className="fccc" component={NavLink} onClick={() => setPaymentType("USDT")}>
-            <Box component="img" src={TRC20} sx={{ width: "100%", height: '55px', borderRadius: "10px", pt: 1, px: 1, }}></Box>
-            <Typography className="fp13 " sx={{ fontWeight: 'bolder', borderRadius: "0px 0px  5px 5px", background: bggrad, width: '100%', py: 1, textAlign: 'center', fontFamily: 'roboto !important' }} mt={1}>
-              USDT TRC 20
-            </Typography>
-          </Box>
-          <Box sx={{ width: '48%', background: '#1B0E1F', borderRadius: "5px", mt: 2, }} className="fccc" component={NavLink} onClick={() => setPaymentType("USDT")}>
-            <Box component="img" src={BEP20} sx={{ width: "100%", height: '55px', borderRadius: "10px", pt: 1, px: 1, }}></Box>
-            <Typography className="fp13 " sx={{ fontWeight: 'bolder', borderRadius: "0px 0px  5px 5px", background: bggrad, width: '100%', py: 1, textAlign: 'center', fontFamily: 'roboto !important' }} mt={1}>
-              USDT  BEP 20
-            </Typography>
-          </Box>
         </Box>
 
-        {/* <Box className="!flex !justify-start !mx-5 gap-5  !-my-5">
-          <Box
-            sx={{
-              background: zubgtext,
-              border: zubgtext,
-
-            }}
-            className="!cursor-pointer px-8 py-3 !rounded-lg !my-10 "
-            onClick={() => setPaymentType("UPI")}
-            variant={paymentType === "UPI" ? "contained" : "outlined"}
-          >
-            <Box component={NavLink}>
-              <Box
-                component="img"
-                src={upipayment}
-                sx={{ width: "100px", height: "80px", borderRadius: "10px" }}
-              ></Box>
-              <Typography className="!text-center !text-white !text-sm" mt={1}>
-                UPI
-              </Typography>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              background: zubgtext,
-              border: zubgtext,
-            }}
-            className="!cursor-pointer px-8  py-3 !rounded-lg !my-10 "
-            onClick={() => setPaymentType("USDT")}
-            variant={paymentType === "USDT" ? "contained" : "outlined"}
-          >
-            <Box>
-              <Box
-                className="!bg-white !border !border-white !rounded-lg"
-                component="img"
-                src={usdt}
-                sx={{ width: "100px", height: "80px", borderRadius: "10px" }}
-              ></Box>
-              <Typography className="!text-center !text-white !text-sm" mt={1}>
-                USDT
-              </Typography>
-            </Box>
-          </Box>
-        </Box> */}
+    
         {paymentType === "UPI" ? (
           <Box sx={{ display: "flex", justifyContent: "start", mt: 2, }}>
             <Box
-              className="!text-black"
+              className="!text-black w95"
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -678,36 +621,14 @@ function WalletRecharge() {
                 borderRadius: '10px',
                 width: '100%'
               }}
-              className="w95"
+             
             >
               {/* contained */}
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '10px 20px' }}>
+              {/* <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '10px 20px' }}>
                 <Button variant="" sx={{ color: bgtan, fontWeight: '500', borderRadius: '30px', background: bggrad }} className={`${Number(fk.values.amount || 0) < 2000 ? "!bg-[linear-gradient(180deg,#F6E3A3 0%,#D2A753 100%)]" : "contained"}`}>Flex</Button>
                 <Button variant="" sx={{ color: 'white', fontWeight: '500', borderRadius: '30px', }} className={`${Number(fk.values.amount || 0) >= 2000 ? "!bg-[linear-gradient(180deg,#F6E3A3 0%,#D2A753 100%)]" : "contained"} `}>PYT-PAY</Button>
-              </Box>
-              {/* <RadioGroup
-                row
-                value={selectedGateway}
-                // onChange={(e) => {
-                //   setDeposit_req_data(null);
-                //   setSelectedGateway(e.target.value);
-                // }}
-              >
-                <Typography className="!mt-2 !mr-5  !font-bold" sx={{ color: 'white !important' }}>Select :</Typography>
-                <FormControlLabel
-                  sx={{ color: 'white !important' }}
-                  value="Gateway2"
-                  control={<Radio sx={{ color: 'white !important' }} />}
-                  label="Flex"
-                />
-
-                <FormControlLabel
-                  sx={{ color: 'white !important' }}
-                  value="Gateway1"
-                  control={<Radio sx={{ color: 'white !important' }} />}
-                  label="PYT-PAY"
-                />
-              </RadioGroup> */}
+              </Box> */}
+            
             </Box>
           </Box>
         ) : (
@@ -747,7 +668,12 @@ function WalletRecharge() {
                   onChange={fk.handleChange}
                   endAdornment={
                     <InputAdornment position="end">
-                      <IconButton edge="end">
+                      <IconButton edge="end"
+                     onClick={() => {
+                        setDeposit_req_data(null);
+                        fk.setFieldValue("amount","")
+                      }
+                      }  >
                         <CloseIcon />
                       </IconButton>
                     </InputAdornment>
@@ -811,7 +737,8 @@ function WalletRecharge() {
                           USDT
                         </Typography>
                         <IconButton edge="end">
-                          <CloseIcon style={{ color: "white" }} />
+                          <CloseIcon style={{ color: "white" }}  
+                          />
                         </IconButton>
                       </div>
                     </InputAdornment>

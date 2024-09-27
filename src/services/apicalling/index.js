@@ -371,6 +371,18 @@ export const dailySalaryIncomeFn = async () => {
     console.log(e);
   }
 };
+
+export const getQraddress = async () => {
+  try {
+    const response = await axios.get(
+      `${endpoint.Qr_address}?user_id=${user_id}`
+    );
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
 export const AttendenceIncomeFn = async () => {
   //
   try {

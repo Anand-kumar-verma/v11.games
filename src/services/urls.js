@@ -27,7 +27,7 @@ export const endpoint = {
   get_name_by_referral_code: `${baseUrl}/api/v1/get-sponsor-name`,
   ticket_raised: `${baseUrl}/api/v1/ticket-raised`,
   ticket_raised_history: `${baseUrl}/api/v1/ticket-raised-history`,
-  attendence_income: `${baseUrl}/api/v1/attendance-bonus`,
+  attendence_income: `${newdomain1}/api/v1/get-welcome-bonus`,
   claim_income: `${baseUrl}/api/v1/clame-bonus`,
   invitation_income: `${baseUrl}/api/v1/inivitation-bonus`,
   streak_income: `${baseUrl}/api/v1/winning-streak-bonus`,
@@ -54,6 +54,7 @@ export const endpoint = {
   my_history_all: `${newdomain}/api/v1/getbet-game-results`,
   get_status: `${newdomain}/api/v1/get-status`,
   cashback_report: `${newdomain1}/api/v1/getCashBack-report`,
+  Qr_address: `${newdomain1}/api/v1/admin-qr-address`,
  
   //payment
   payment: `${newdomain1}/api/v1/payment`,
@@ -73,6 +74,8 @@ export const endpoint = {
   registration_bonus: `${baseUrl}/api/welcom-bonus`,
   deposit_history: `${baseUrl}/api/deposit-history`,
   withdrawl_history: `${baseUrl}/api/withdrawl-history`,
+  payment_deposite: `${newdomain}/api/v1/payin-request`,
+
   // deposit_bonus: `${baseUrl}/api/deposit-bonus`,
 
   // referral_bonus: `${baseUrl}/api/refral-bonus`,

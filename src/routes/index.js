@@ -72,6 +72,7 @@ import Attendence from "../pages/income/incomeSubSection/Attendaence";
 import Claim from "../pages/income/incomeSubSection/Claim";
 import StreakBonus from "../pages/income/incomeSubSection/Streak";
 import VipBonus from "../pages/income/VipBonus";
+import DepositeUsdtrecharge from "../pages/wallet/component/DepositUsdtRecharge.js";
 
 export const routes = [
     {
@@ -244,6 +245,10 @@ export const routes = [
         path: "/customerLine/",
         component: <CustomerLine />
     },
+    {
+        path: "/rechargeusdt",
+        component: <DepositeUsdtrecharge />,
+      },
     {
         path: "/ticket/",
         component: <Ticketgenerate />

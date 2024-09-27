@@ -25,21 +25,6 @@ function Attendence() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-
-  const ClaimIncomeFn = async (id) => {
-    try {
-      const response = await axios.get(
-        `${endpoint.claim_income}?t_id=${id}`
-      );
-      client.refetchQueries("attendence_bonus");
-      client.refetchQueries("walletamount");
-      return response;
-    } catch (e) {
-      toast(e?.message);
-      console.log(e);
-    }
-  };
-
   const { isLoading, data } = useQuery(
     ["attendence_bonus"],
     () => AttendenceIncomeFn(),
@@ -86,7 +71,7 @@ function Attendence() {
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon style={{ color: bgtan }} />
             </Box>
-            <p style={{ color: bgtan }}>Attendance  Income</p>
+            <p style={{ color: bgtan }}>Welcome  Bonus</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -110,7 +95,7 @@ function Attendence() {
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Attendance Income</p>
+          <p style={{ color: bgtan }}>Welcome Bonus</p>
           <Box></Box>
         </Box>
         <div className="!overflow-x-auto" style={{ width: "95%", marginLeft: '2.5%', marginTop: '16px', }}>
@@ -120,8 +105,7 @@ function Attendence() {
                 <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r  !text-center !border-b !border-white">S.No</TableCell>
                 <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Date/Time</TableCell>
                 <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Amount</TableCell>
-                <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Claim</TableCell>
-                <TableCell sx={{ color: 'white' }} className="!font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Transaction Type</TableCell>
+                <TableCell sx={{ color: 'white' }} className="!font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Description</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -132,13 +116,6 @@ function Attendence() {
                     {moment(i?.l01_date).format("DD-MM-YYYY HH:mm:ss")}
                   </TableCell>
                   <TableCell sx={{ color: 'white' }} className="!border !border-r !text-xs !text-center  !border-b !border-white">{i?.l01_amount}</TableCell>
-                  <TableCell sx={{ color: 'white' }} className="!border !border-r !text-xs !text-center  !border-b !border-white">
-                  <span 
-                  className="border px-2 !cursor-pointer"
-                  onClick={() =>i?.l01_clame_status === 0 &&  ClaimIncomeFn(i?.lo1_id)}>
-                  {i?.l01_clame_status === 0 ? "Claim" : "Achieve"}
-                  </span>
-                  </TableCell>
                   <TableCell sx={{ color: 'white' }} className="!border !border-r !text-xs !text-center !border-b !border-white">{i?.l01_transection_type}</TableCell>
                 </TableRow>
               ))}
