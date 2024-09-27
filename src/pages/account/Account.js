@@ -170,21 +170,13 @@ function Account() {
           </Box>
         </Box>
         <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-40px', width: '95%', ml: '2.5%', }}>
-          <Box className="flex gap-1 justify-center p-1 py-4 items-center  shadow-xl  rounded-lg" sx={{ background: bglightgray }} component={NavLink} to="/gamehistory">
-            <Typography><img src={game} alt="" className="w-10" /></Typography>
-            <Typography sx={{ color: 'white' }}>Game History <br /><span className="!text-xs !text-white"> My game history</span></Typography>
-          </Box>
-          <Box className="flex gap-1 p-1 justify-center items-center py-4 shadow-xl  rounded-lg" sx={{ background: bglightgray }} component={NavLink} to="/transectionhistory">
-            <Typography><img src={game} alt="" className="w-10" /></Typography>
-            <Typography sx={{ color: 'white' }}>Transaction <br /><span className="!text-xs !text-white"> My Transaction history</span></Typography>
-          </Box>
-          <NavLink to="/depositehistory">
+          <NavLink to="/depositHistory">
             <Box className="flex gap-1 p-1 py-4 justify-center items-center shadow-xl  rounded-lg" sx={{ background: bglightgray }}>
               <Typography><img src={depo} alt="" className="w-10" /></Typography>
               <Typography sx={{ color: 'white' }}>Deposit <br /><span className="!text-xs !text-white"> My Deposit history</span></Typography>
             </Box>
           </NavLink>
-          <NavLink to="/withdrawlhistory">
+          <NavLink to="/withdravalHistory">
             <Box className="flex gap-1 p-1 py-4 justify-center items-center shadow-xl  rounded-lg" sx={{ background: bglightgray }}>
               <Typography><img src={wit} alt="" className="w-10" /></Typography>
               <Typography sx={{ color: 'white' }}>Withdraw <br /><span className="!text-xs !text-white"> My Withdraw history</span></Typography>
@@ -248,183 +240,10 @@ function Account() {
               borderRadius: "10px",
             }}
           >
-            {/* <Stack
-              component={NavLink}
-              to="/gift"
-              direction="row"
-              sx={{
-                borderBottom: `1px solid ${zubgtext}`,
-                padding: " 10px 10px 10px 5px",
-                width: "100%",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <Stack direction="row" sx={{ alignItems: "center" }}>
-                <Box
-                  component="img"
-                  src={gift}
-                  sx={{ width: "30px", height: "30px", marginRight: "10px", filter: 'hue-rotate(135deg)' }}
-                ></Box>
-                <Typography
-                  variant="body1"
-                  color="initial"
-                  sx={{ color: 'white', fontSize: "13px", fontWeight: "600" }}
-                >
-                  Gifts
-                </Typography>
-              </Stack>
-              <Box>
-                <KeyboardDoubleArrowRightIcon
-                  sx={{ color: 'white', fontSize: "23px", fontWeight: "600" }}
-                />
-              </Box>
-            </Stack> */}
-
-            {/* <Stack
-              component={NavLink}
-              to="/gamestaticks"
-              direction="row"
-              sx={{
-                borderBottom: `1px solid ${zubgtext}`,
-                padding: " 10px 10px 10px 5px",
-                width: "100%",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <Stack direction="row" sx={{ alignItems: "center" }}>
-                <Box
-                  component="img"
-                  src={graph}
-                  sx={{ width: "25px", height: "25px", marginRight: "10px", filter: 'hue-rotate(135deg)' }}
-                ></Box>
-                <Typography
-                  variant="body1"
-                  color="initial"
-                  sx={{ color: 'white', fontSize: "13px", fontWeight: "600" }}
-                >
-                  Game statistics
-                </Typography>
-              </Stack>
-              <Box>
-                <KeyboardDoubleArrowRightIcon
-                  sx={{ color: 'white', fontSize: "23px", fontWeight: "600" }}
-                />
-              </Box>
-            </Stack>
-
-            <Stack
-              component={NavLink}
-              to="/Language"
-              direction="row"
-              sx={{
-                borderBottom: `1px solid ${zubgtext}`,
-                padding: " 10px 10px 10px 5px",
-                width: "100%",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <Stack direction="row" sx={{ alignItems: "center" }}>
-                <Box
-                  component="img"
-                  src={trans}
-                  sx={{ width: "25px", height: "25px", marginRight: "10px", filter: 'hue-rotate(135deg)' }}
-                ></Box>
-                <Typography
-                  variant="body1"
-                  color="initial"
-                  sx={{ color: 'white', fontSize: "13px", fontWeight: "600" }}
-                >
-                  Language
-                </Typography>
-              </Stack>
-              <Box>
-                <Typography
-                  sx={{ color: 'white', fontSize: "13px", fontWeight: "500" }}
-                >
-                  English
-                </Typography>
-              </Box>
-            </Stack> */}
+            
+          
           </Stack>
         </Box>
-        {/* <Box
-          sx={{
-            width: "95%",
-            marginLeft: "2.5%",
-            borderRadius: "10px",
-            background: zubgmid,
-            padding: "10px",
-            mt: "20px",
-            "&>:nth-child(1)": {
-              color: "white",
-              fontSize: "15px",
-              fontWeight: "600",
-              mb: "25px",
-            },
-          }}
-        >
-          <Typography variant="body1" color="initial">
-            Service center
-          </Typography>
-
-          <div className="!w-full !grid !grid-cols-3 !place-items-center">
-            {[
-             
-              {
-                 to: "/SettingCenter",
-                 name: "Setting", 
-                 logo: setting 
-                },
-              {
-                to: "/gameNotification",
-                name: "Notification",
-                logo: notification1,
-              },
-              {
-                to: "/SettingCenter/LoginPassword",
-                name: "Change Password",
-                logo: user2,
-              },
-              {
-                to: "/customerLine/",
-                name: "Customer service",
-                logo: customer,
-              },
-              { to: "/feedback", name: "Feedback", logo: hand },
-            ]?.map((i) => {
-              return (
-                <Box
-                  component={NavLink}
-                  to={i.to}
-                  sx={{
-                    width: "30%",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    mb: "10px",
-                    "&>p": {
-                      color: "white",
-                      fontSize: "14px",
-                      fontWeight: "500",
-                      mt: "5px",
-                    },
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={i.logo}
-                    sx={{ width: "30px", height: "30px" }}
-                  ></Box>
-                  <Typography>{i.name}</Typography>
-                </Box>
-              );
-            })}
-          </div>
-        </Box> */}
         <Box
           sx={{
             width: "95%",
@@ -443,25 +262,9 @@ function Account() {
             Logout
           </Button>
         </Box>
-        {/* {openDialogBoxHomeBanner && (
-          <Dialog
-            PaperProps={{ width: "500px", height: "500px" }}
-            open={openDialogBoxHomeBanner}
-          >
-            <div>
-              <p>
-                <IconButton onClick={() => setopenDialogBoxHomeBanner(false)}>
-                  <CloseIcon />
-                </IconButton>
-              </p>
-              <p>
-                <img src={sunlotteryhomebanner} />
-              </p>
-            </div>
-          </Dialog>
-        )} */}
+    
         <CustomCircularProgress isLoading={isLoading} />
-        {/* <MyModal /> */}
+      
       </Container>
     </Layout>
   );

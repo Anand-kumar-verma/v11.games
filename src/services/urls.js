@@ -1,10 +1,13 @@
 export const rupees = "₹";
 // https://admin.bngwin.live/
-export const baseUrl = "https://api.bngwin.live";
+
+export const baseUrl = "https://api.v11.games";
+// export const baseUrl = "https://api.bngwin.live";
 export const fron_end_main_domain = "https://bngwin.live";
 
-export const newdomain1 = "https://api.bngwin.live";
-export const newdomain = "https://api.bngwin.live";
+export const newdomain1 = "https://api.v11.games";
+export const newdomain = "https://api.v11.games";
+
 // export const newdomain1 = "http://192.168.18.183:9000";
 // export const newdomain = "http://192.168.18.183:9000";
 
@@ -27,13 +30,13 @@ export const endpoint = {
   attendence_income: `${baseUrl}/api/v1/attendance-bonus`,
   claim_income: `${baseUrl}/api/v1/clame-bonus`,
   invitation_income: `${baseUrl}/api/v1/inivitation-bonus`,
- streak_income: `${baseUrl}/api/v1/winning-streak-bonus`,
- vip_income: `${baseUrl}/api/v1/vip-bonus`,
- deposit_bonus: `${baseUrl}/api/v1/get-deposit-bonus-income/`,
- daily_income: `${baseUrl}/api/v1/daily-salary-income`,
- forget_pass: `${baseUrl}/api/v1/forget-password-send-otp`,
- otp_verify: `${baseUrl}/api/v1/forget-password-veryfy-otp`,
- change_password: `${baseUrl}/api/v1/forget-password-change-pass`,
+  streak_income: `${baseUrl}/api/v1/winning-streak-bonus`,
+  vip_income: `${baseUrl}/api/v1/vip-bonus`,
+  deposit_bonus: `${baseUrl}/api/v1/get-deposit-bonus-income/`,
+  daily_income: `${baseUrl}/api/v1/daily-salary-income`,
+  forget_pass: `${baseUrl}/api/v1/forget-password-send-otp`,
+  otp_verify: `${baseUrl}/api/v1/forget-password-veryfy-otp`,
+  change_password: `${baseUrl}/api/v1/forget-password-change-pass`,
 
 
 
