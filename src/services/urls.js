@@ -3,7 +3,7 @@ export const rupees = "₹";
 
 export const baseUrl = "https://api.v11.games";
 // export const baseUrl = "https://api.bngwin.live";
-export const fron_end_main_domain = "https://bngwin.live";
+export const fron_end_main_domain = "https://v11.games";
 
 export const newdomain1 = "https://api.v11.games";
 export const newdomain = "https://api.v11.games";
@@ -18,7 +18,7 @@ export const facebook_url = "";
 export const instagram_url = "";
 
 export const endpoint = {
-  //node login api  
+  //node login api
 
   login: `${newdomain}/api/v1/user_login`,
   send_otp: `${baseUrl}/api/forget-password`,
@@ -38,10 +38,6 @@ export const endpoint = {
   otp_verify: `${baseUrl}/api/v1/forget-password-veryfy-otp`,
   change_password: `${baseUrl}/api/v1/forget-password-change-pass`,
 
-
-
-
-
   userwallet: `${newdomain1}/api/v1/userwallet`,
   get_yesterday_deposit_withdrawl_by_treamFn: `${newdomain1}/api/v1/get_yesterday_deposit_withdrawl_by_treamFn`,
   top11winner: `${newdomain1}/api/v1/get-top-winners`,
@@ -55,7 +51,7 @@ export const endpoint = {
   get_status: `${newdomain}/api/v1/get-status`,
   cashback_report: `${newdomain1}/api/v1/getCashBack-report`,
   Qr_address: `${newdomain1}/api/v1/admin-qr-address`,
- 
+
   //payment
   payment: `${newdomain1}/api/v1/payment`,
   deposit_history_usdt: `${newdomain1}/api/v1/coin-payment-deposit-history`,
@@ -91,7 +87,6 @@ export const endpoint = {
   recharge_call_bakc: `${baseUrl}/api/deposits-user-request`,
   cricket_get_url_id_pass: `${baseUrl}/api/cricket-details`,
 
-
   trx_game_history: `${newdomain}/api/v1/trx-auto-genrated-result`,
   my_history_all_trx: `${newdomain}/api/v1/trx-getColourBets`,
   my_history_all_trx_temp: `${newdomain}/api/v1//trx-getColourBets-temp`,
@@ -117,5 +112,5 @@ export const endpoint = {
   commission_data: `${newdomain1}/api/v1/get-commisssion-data-funx`,
   tranfer_wallet: `${newdomain1}/api/v1/transfer-amount-from-working-wallet-to-main-wallet`,
   transfer_wallet_history: `${newdomain1}/api/v1/transfer-history-from-working-wallet-to-main-wallet`,
-  yesterday_income : `${newdomain}/api/v1/get-total-betA-ad-income-yesterday`,
+  yesterday_income: `${newdomain}/api/v1/get-total-betA-ad-income-yesterday`,
 };
