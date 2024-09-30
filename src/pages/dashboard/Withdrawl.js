@@ -401,7 +401,6 @@ function Withdrawl() {
      <>
      <p className="text-white ">Account No : {result?.[0]?.account}</p>
      <p className="text-white ">IFSC Code  : {result?.[0]?.ifsc}</p>
-
      </>
     }
     
