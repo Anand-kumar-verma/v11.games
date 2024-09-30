@@ -25,11 +25,11 @@ function MainPageOFIncome() {
       name: "Direct Referral Recharge Salary Income",
       logo: <RedeemIcon className="!w-[40px] !h-[40px] " color="black" />,
     },
-    // {
-    //    to: "/account/income-main/streak-bonus",
-    //   name: "Winning Streak Income",
-    //   logo: <PriceCheckIcon className="!w-[40px] !h-[40px] " color="black" />,
-    // },
+    {
+       to: "/account/income-main/referral_recharge",
+      name: "Referral Recharge Salary",
+      logo: <PriceCheckIcon className="!w-[40px] !h-[40px] " color="black" />,
+    },
     {
         to: "/account/income-main/vip-bonus",
         name: "VIP Income",

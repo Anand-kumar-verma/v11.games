@@ -30,7 +30,6 @@ export const endpoint = {
   attendence_income: `${newdomain1}/api/v1/get-welcome-bonus`,
   claim_income: `${baseUrl}/api/v1/clame-bonus`,
   invitation_income: `${baseUrl}/api/v1/inivitation-bonus`,
-  streak_income: `${baseUrl}/api/v1/winning-streak-bonus`,
   vip_income: `${baseUrl}/api/v1/vip-bonus`,
   deposit_bonus: `${baseUrl}/api/v1/get-deposit-bonus-income/`,
   daily_income: `${baseUrl}/api/v1/daily-salary-income`,
@@ -115,6 +114,7 @@ export const endpoint = {
   transfer_wallet_history: `${newdomain1}/api/v1/transfer-history-from-working-wallet-to-main-wallet`,
   yesterday_income: `${newdomain}/api/v1/get-total-betA-ad-income-yesterday`,
   recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
+  refferral_recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
  
 
 

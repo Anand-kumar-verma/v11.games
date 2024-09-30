@@ -84,7 +84,7 @@ export const routes = [
         component: <Attendence />
     },
     {
-        path: "/account/income-main/streak-bonus",
+        path: "/account/income-main/referral_recharge",
         component: <StreakBonus />
     },
     {

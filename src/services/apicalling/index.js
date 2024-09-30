@@ -420,11 +420,11 @@ export const InvitationIncomeFn = async () => {
     console.log(e);
   }
 };
-export const StreakIncomeFn = async () => {
+export const ReferralrechargeIncomeFn = async () => {
   //
   try {
     const response = await axios.get(
-      `${endpoint.streak_income}?user_id=${user_id}`
+      `${endpoint.refferral_recharge_income}?user_id=${user_id}`
     );
     return response;
   } catch (e) {
