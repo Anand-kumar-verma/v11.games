@@ -128,7 +128,7 @@ function WithdrawalHistoryUSdt() {
                     </Typography>
                     <Typography variant="body1" color="initial" className="!text-[15px]">
                       {/* ₹  */}
-                      {i?.tr15_amt}
+                      {i?.dollar_amount || i?.tr15_amt}
                     </Typography>
                   </Stack>
                 
@@ -149,36 +149,7 @@ function WithdrawalHistoryUSdt() {
                     </Typography>
                   </Stack>
                  
-                  <Stack
-                    direction="row"
-                    sx={{
-                      mb: "5px",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      "&>p": { color: zubgtext },
-                    }}
-                  >
-                    <Typography variant="body1" color="initial" className="!text-[15px]">
-                      Trans number
-                    </Typography>
-                    <Stack
-                      direction="row"
-                      sx={{
-                        mb: "5px",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        "&>p": { color: zubgtext },
-                      }}
-                    >
-                      <Typography variant="body1" color="initial" className="!text-[15px]">
-                        {i?.tr15_w_id}
-                      </Typography>
-
-                      {/* <IconButton>
-                        <ContentCopyIcon sx={{ color: zubgtext }} />
-                      </IconButton> */}
-                    </Stack>
-                  </Stack>
+              
                   <Stack
 
                     direction="row"
@@ -207,6 +178,36 @@ function WithdrawalHistoryUSdt() {
                       </Typography>
                     </Stack>
                     
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    sx={{
+                      mb: "5px",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      "&>p": { color: zubgtext },
+                    }}
+                  >
+                    <Typography variant="body1" color="initial" className="!text-[15px]">
+                      Trans number
+                    </Typography>
+                    <Stack
+                      direction="row"
+                      sx={{
+                        mb: "5px",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        "&>p": { color: zubgtext },
+                      }}
+                    >
+                      <Typography variant="body1" color="initial" className="!text-[15px]">
+                        {i?.tr15_trans}
+                      </Typography>
+
+                      {/* <IconButton>
+                        <ContentCopyIcon sx={{ color: zubgtext }} />
+                      </IconButton> */}
+                    </Stack>
                   </Stack>
                   <Stack
                     direction="row"

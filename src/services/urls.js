@@ -9,7 +9,7 @@ export const newdomain1 = "https://api.v11.games";
 export const newdomain = "https://api.v11.games";
 
 // export const newdomain1 = "http://192.168.18.183:9000";
-// export const newdomain = "http://192.168.18.183:9000";
+export const newdomainn = "http://192.168.18.183:9000";
 
 export const domain = "https://funxplora-timer.onrender.com";
 export const support_mail = "";
@@ -37,12 +37,13 @@ export const endpoint = {
   forget_pass: `${baseUrl}/api/v1/forget-password-send-otp`,
   otp_verify: `${baseUrl}/api/v1/forget-password-veryfy-otp`,
   change_password: `${baseUrl}/api/v1/forget-password-change-pass`,
+  forget_password: `${baseUrl}/api/v1/change-password`,
 
   userwallet: `${newdomain1}/api/v1/userwallet`,
   get_yesterday_deposit_withdrawl_by_treamFn: `${newdomain1}/api/v1/get_yesterday_deposit_withdrawl_by_treamFn`,
   top11winner: `${newdomain1}/api/v1/get-top-winners`,
   openbannerUrl: `${baseUrl}/popup`,
-  profiledata: `${baseUrl}/api/profileapi`,
+  profiledata: `${baseUrl}/api/v1/profileapi`,
   get_level: `${newdomain}/api/v1/get-level`,
   promotion_data: `${newdomain}/api/v1/promotiondata`,
   applybet: `${newdomain}/api/v1/bet`,
@@ -54,11 +55,11 @@ export const endpoint = {
 
   //payment
   payment: `${newdomain1}/api/v1/payment`,
-  deposit_history_usdt: `${newdomain1}/api/v1/coin-payment-deposit-history`,
+  deposit_history_usdt: `${newdomain1}/api/v1/deposit-history-usdt`,
   withdrawal_request_usdt: `${newdomain1}/api/v1/payout-request`,
   withdrawal_address_usdt: `${newdomain1}/api/v1/add-usdt-address`,
   get_address_list: `${newdomain1}/api/v1/usdt-address-record`,
-  withdrawl_usdt_history: `${newdomain1}/api/v1/coin-payment-withdrawl-history`,
+  withdrawl_usdt_history: `${newdomain1}/api/v1/withdrawal-history-usdt`,
 
   check_result: `${baseUrl}/api/checkresult`,
   color_winning: `${baseUrl}/api/colour_winning`,
@@ -68,8 +69,8 @@ export const endpoint = {
 
   payment_request: `${baseUrl}/api/deposit-request`,
   registration_bonus: `${baseUrl}/api/welcom-bonus`,
-  deposit_history: `${baseUrl}/api/deposit-history`,
-  withdrawl_history: `${baseUrl}/api/withdrawl-history`,
+  deposit_history: `${baseUrl}/api/v1/deposit-history-inr`,
+  withdrawl_history: `${baseUrl}/api/v1/withdrawal-history-inr`,
   payment_deposite: `${newdomain}/api/v1/payin-request`,
 
   // deposit_bonus: `${baseUrl}/api/deposit-bonus`,
@@ -81,8 +82,8 @@ export const endpoint = {
   weekly_salary_income: `${newdomain1}/api/v1/weekly-salary-icome`,
   team_reward_bonus: `${baseUrl}/api/team-reward-bonus`,
   team_trading_bonus: `${newdomain}/api/v1/level-income`,
-  add_bank_details: `${baseUrl}/api/bank-add`,
-  get_bank_list: `${baseUrl}/api/user-bank-details`,
+  add_bank_details: `${baseUrl}/api/v1/bank-add`,
+  get_bank_list: `${baseUrl}/api/v1/user-bank-details`,
   all_withdrawl_user_list: `${baseUrl}/api/widthrol-user-list`,
   recharge_call_bakc: `${baseUrl}/api/deposits-user-request`,
   cricket_get_url_id_pass: `${baseUrl}/api/cricket-details`,
@@ -113,4 +114,9 @@ export const endpoint = {
   tranfer_wallet: `${newdomain1}/api/v1/transfer-amount-from-working-wallet-to-main-wallet`,
   transfer_wallet_history: `${newdomain1}/api/v1/transfer-history-from-working-wallet-to-main-wallet`,
   yesterday_income: `${newdomain}/api/v1/get-total-betA-ad-income-yesterday`,
+  recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
+ 
+
+
+
 };

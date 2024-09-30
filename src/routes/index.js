@@ -92,7 +92,7 @@ export const routes = [
         component: <VipBonus />
     },
     {
-        path: "/account/income-main/claim-bonus",
+        path: "/account/income-main/recharge-bonus",
         component: <Claim />
     },
     {

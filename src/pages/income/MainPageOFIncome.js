@@ -20,11 +20,11 @@ function MainPageOFIncome() {
       name: "Welcome Bonus",
       logo: <PriceCheckIcon className="!w-[40px] !h-[40px] " color="black" />,
     },
-    // {
-    //   to: "/account/income-main/claim-bonus",
-    //   name: "Invitation Income",
-    //   logo: <RedeemIcon className="!w-[40px] !h-[40px] " color="black" />,
-    // },
+    {
+      to: "/account/income-main/recharge-bonus",
+      name: "Direct Referral Recharge Salary Income",
+      logo: <RedeemIcon className="!w-[40px] !h-[40px] " color="black" />,
+    },
     // {
     //    to: "/account/income-main/streak-bonus",
     //   name: "Winning Streak Income",

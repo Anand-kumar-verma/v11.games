@@ -97,7 +97,7 @@ function LoginPassword() {
     setLoading(true);
 
     try {
-      const response = await axios.post(endpoint.change_password, reqbody, {
+      const response = await axios.post(endpoint.forget_password, reqbody, {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",

@@ -107,12 +107,12 @@ function DepositeUsdt() {
                                         <Box>
                                             <Button
                                                 sx={{ color: "green", textTransform: "capitalize" }}
-                                                className={`${i?.status === "success"
+                                                className={`${i?.tr15_status === "success"
                                                     ? "!text-green-500"
                                                     : "!text-red-500"
                                                     }`}
                                             >
-                                                {i?.status}
+                                                {i?.tr15_status}
                                             </Button>
                                             <IconButton>
                                                 <ArrowForwardIcon sx={{ color: zubgtext }} />
@@ -133,7 +133,7 @@ function DepositeUsdt() {
                                             Balance
                                         </Typography>
                                         <Typography variant="body1" color="initial">
-                                            $ {i?.amt}
+                                        ₹ {i?.tr15_amt}
                                         </Typography>
                                     </Stack>
                                     <Stack
@@ -190,7 +190,7 @@ function DepositeUsdt() {
                                             }}
                                         >
                                             <Typography variant="body1" color="initial">
-                                                {i?.order_id}
+                                                {i?.tr15_trans}
                                             </Typography>
                                             <IconButton>
                                                 <ContentCopyIcon sx={{ color: zubgtext }} />
