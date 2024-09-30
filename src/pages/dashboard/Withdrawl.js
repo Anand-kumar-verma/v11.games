@@ -399,8 +399,8 @@ function Withdrawl() {
       </div>
     ) : 
      <>
-     <p className="text-white "><span className="!text-black !font-bold">Account No : </span> {result?.[0]?.account}</p>
-     <p className="text-white "><span className="!text-black !font-bold">IFSC Code  : </span> {result?.[0]?.ifsc}</p>
+     <p className="text-white ">Account No : {result?.[0]?.account}</p>
+     <p className="text-white ">IFSC Code  : {result?.[0]?.ifsc}</p>
 
      </>
     }
