@@ -7,9 +7,11 @@ export const fron_end_main_domain = "https://v11.games";
 
 export const newdomain1 = "https://api.v11.games";
 export const newdomain = "https://api.v11.games";
+export const newdomainn = "https://api.v11.games";
+
 
 // export const newdomain1 = "http://192.168.18.183:9000";
-export const newdomainn = "http://192.168.18.183:9000";
+// export const newdomainn = "http://192.168.18.183:9000";
 
 export const domain = "https://funxplora-timer.onrender.com";
 export const support_mail = "";
