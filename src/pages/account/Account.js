@@ -1,37 +1,31 @@
 import { ArrowForwardIos, CopyAll } from '@mui/icons-material';
 import CachedIcon from "@mui/icons-material/Cached";
-import CloseIcon from "@mui/icons-material/Close";
-import { Box, Button, Container, Dialog, IconButton, Stack, Typography, } from "@mui/material";
+import { Box, Button, Container, IconButton, Stack, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
 import { bgdarkgray, bggold, bglightgray, bgtan, zubgtext } from "../../Shared/color";
+import bep from "../../assets/images/bep20token_nadcab.png";
 import c1 from "../../assets/images/c1.png";
 import depo from "../../assets/images/depo.png";
 import f1 from "../../assets/images/f1.png";
-import game from "../../assets/images/game.png";
-import g from "../../assets/images/gift.png";
 import lang from "../../assets/images/lang.png";
 import n1 from "../../assets/images/n1.png";
 import not from "../../assets/images/not.png";
-import a1 from "../../assets/images/password (1).png";
 import dp1 from "../../assets/images/pr.png";
 import star from "../../assets/images/star.png";
-import vip from "../../assets/images/vip.png";
-import wit from "../../assets/images/witt.png";
 import trc from "../../assets/images/tether-usdt-logo-FA55C7F397-seeklogo.com.png";
-import bep from "../../assets/images/bep20token_nadcab.png";
+import vip from "../../assets/images/vip.png";
 import edit from "../../assets/images/vipicon.png";
+import wit from "../../assets/images/witt.png";
 import wtd from "../../assets/rechargeIcon.png";
-// import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import s from "../../assets/wdhistory.png";
 import dpt from "../../assets/withdrow.png";
 import Layout from "../../component/Layout/Layout";
 import { walletamount } from "../../services/apicalling";
 import { baseUrl, fron_end_main_domain } from "../../services/urls";
-import MyModal from '../../Shared/Modal';
 
 function Account() {
   const [opend, setOpend] = useState(false);
@@ -40,7 +34,6 @@ function Account() {
   const transactionId = searchParams?.get("order_id");
   const client = useQueryClient();
   const navigate = useNavigate();
-  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] = useState(false);
 
   const { isLoading, data: amount } = useQuery(["walletamount"], () => walletamount(), {
     refetchOnMount: false,

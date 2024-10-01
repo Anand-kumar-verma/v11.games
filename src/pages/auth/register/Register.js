@@ -70,8 +70,6 @@ function Register() {
     onSubmit: () => {
       if (fk.values.pass !== fk.values.confirmpass)
         return toast("Password and confirm password should be same.");
-      // if (!fk.values.privacy_policy)
-      //   return toast("Please confirm the privacy policy.");
 
       const reqBody = {
         email: fk.values.email,
