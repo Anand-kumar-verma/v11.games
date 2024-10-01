@@ -13,7 +13,7 @@ export const newdomainn = "https://api.v11.games";
 // export const newdomain1 = "http://192.168.18.183:9000";
 // export const newdomainn = "http://192.168.18.183:9000";
 
-export const domain = "https://funxplora-timer.onrender.com";
+export const domain = "https://v11-timer.onrender.com";
 export const support_mail = "";
 export const telegram_url = "";
 export const facebook_url = "";
@@ -75,8 +75,8 @@ export const endpoint = {
   payment_deposite: `${newdomain}/api/v1/payin-request`,
 
   // deposit_bonus: `${baseUrl}/api/deposit-bonus`,
-
   // referral_bonus: `${baseUrl}/api/refral-bonus`,
+
   daily_self_bet_income: `${baseUrl}/api/daily-self-bet-income`,
   daily_wallet_income: `${baseUrl}/api/daily-wallet-income`,
   daily_salary_income: `${newdomain1}/api/v1/daily-salary-icome`,
@@ -117,8 +117,6 @@ export const endpoint = {
   yesterday_income: `${newdomain}/api/v1/get-total-betA-ad-income-yesterday`,
   recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
   refferral_recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
- 
-
-
+  get_level_general: `${newdomain1}/api/v1/get_level_general_data`,
 
 };

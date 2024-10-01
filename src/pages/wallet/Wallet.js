@@ -403,9 +403,9 @@ function Wallet() {
 
       
         <CustomCircularProgress isLoading={isLoading} />
-        {statusyesterday?.status_of_deposit_popup === 1 ?
+        {/* {statusyesterday?.status_of_deposit_popup === 1 ?
            <MyModal /> 
-          : "" }
+          : "" } */}
 
       </Container>
     </Layout>

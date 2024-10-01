@@ -432,6 +432,16 @@ export const ReferralrechargeIncomeFn = async () => {
     console.log(e);
   }
 };
+export const MygetdataLevelFn = async () => {
+  try {
+    const response = await axios.get(
+      `${endpoint.get_level_general}?user_id=${Number(user_id)}`
+    );
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
 export const VipIncomeFn = async () => {
   //
   try {

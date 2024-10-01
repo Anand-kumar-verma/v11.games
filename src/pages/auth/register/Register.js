@@ -45,6 +45,8 @@ function Register() {
     React.useState(false);
   const [loding, setloding] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const url = new URL(window.location.href);
+  const [refParam, setrefParam] = useState(url.searchParams.get("ref") || "");
   const handle_confirm_ClickShowPassword = () =>
     set_show_confirm_password(!show_confirm_password);
 
@@ -58,7 +60,7 @@ function Register() {
     name: "",
     pass: "",
     confirmpass: "",
-    refid: "",
+    refid : refParam,
   };
 
   const fk = useFormik({
@@ -76,7 +78,7 @@ function Register() {
         mobile: String(fk.values.mobile) || "",
         pass: fk.values.pass,
         confirmpass: fk.values.confirmpass,
-        refid: result?.id,
+        refid : result?.id ,
         name: fk.values.name,
         // privacy_policy: false,
       }
@@ -86,44 +88,44 @@ function Register() {
 
   const signupFunction = async (reqBody) => {
     setloding(true);
-    try {
-      const response = await axios.post(endpoint.signup, reqBody);
-      if ("Registration Successful." === response?.data?.msg) {
+  try {
+    const response = await axios.post(endpoint.signup, reqBody);
+    if ("Registration Successful." === response?.data?.msg ) {
         toast(response?.data?.msg);
-        //    const value = CryptoJS.AES.encrypt(
-        //   JSON.stringify(response?.data),
-        //   "anand"
-        // ).toString();
-        // storeCookies()
-        // localStorage.setItem("logindataen", value)
-        navigate("/");
+      //    const value = CryptoJS.AES.encrypt(
+      //   JSON.stringify(response?.data),
+      //   "anand"
+      // ).toString();
+      // storeCookies()
+      // localStorage.setItem("logindataen", value)
+        navigate("/");  
         // window.location.reload()
-      } else {
-        toast(response?.data?.msg);
-      }
-    } catch (e) {
-      console.log(e);
+    } else {
+      toast(response?.data?.msg);
     }
-    setloding(false);
+  } catch (e) {
+    console.log(e);
   }
+  setloding(false);
+}
 
-  const { data } = useQuery(
-    ["getname", fk.values.refid],
-    () => CandidateNameFn({ userid: fk.values.refid }),
+  const {  data } = useQuery(
+    ["getname", fk.values.refid ],
+    () => CandidateNameFn({ userid: fk.values.refid  }),
     {
       refetchOnMount: false,
       refetchOnReconnect: false,
       refetchOnWindowFocus: false,
     }
   );
-  const result = data?.data?.data;
+  const result = data?.data?.data ;
 
   return (
     <Layout header={false} footer={false}>
       <Box sx={style.authheader}>
         <Container>
           <Box sx={{ ...flexbetween, background: bgcolorlight, px: 1, py: 1 }}>
-            <Box component={NavLink} sx={{ width: "20%" }} to="/" >
+            <Box component={NavLink} sx={{ width: "20%" }}>
               <ArrowBackIosNew sx={style.icon1} />
             </Box>
             <Box sx={{ width: "60%" }}>
@@ -344,9 +346,9 @@ function Register() {
                 onChange={fk.handleChange}
                 onKeyDown={(e) => e.key === "Enter" && fk.handleSubmit()}
               />
-              {fk.touched.refid && fk.errors.refid ? (
-                <div className="error">{fk.errors.refid}</div>
-              ) : fk.values.refid ? (
+              {fk.touched.refid  && fk.errors.refid  ? (
+                <div className="error">{fk.errors.refid }</div>
+              ) : fk.values.refid  ? (
                 result ? (
                   <div className="no-error">Referral From: {result?.full_name}</div>
                 ) : (

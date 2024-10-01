@@ -121,7 +121,7 @@ function Withdrawl() {
 
   const fk = useFormik({
     initialValues: initialValues,
-    validationSchema: withdraw_amount_validation_schema,
+    // validationSchema: withdraw_amount_validation_schema,
     onSubmit: () => {
       // if (type) {
       //   if (Number(amount?.cricket_wallet || 0) < Number(fk.values.amount || 0))
