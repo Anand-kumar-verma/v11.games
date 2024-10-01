@@ -179,7 +179,7 @@ function DepositeUsdt() {
                                         }}
                                     >
                                         <Typography variant="body1" color="initial">
-                                            Trans number
+                                            Transaction Hash
                                         </Typography>
                                         <Stack
                                             direction="row"
