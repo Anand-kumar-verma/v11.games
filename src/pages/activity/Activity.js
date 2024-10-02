@@ -75,19 +75,19 @@ function Activity() {
           We will launch user feedback activities from time to time
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', mt: 2 }}>
+      {/* <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', mt: 2 }}>
         <Box className="fccc fp13" component={NavLink} to="/activity/InvitationBonus">
           <Box component='img' sx={{ width: '50px' }} src={invitationBonus}></Box>
           <Typography className="fp13" sx={{ color: 'white' }}>Invitation </Typography>
           <Typography className="fp13" sx={{ color: 'white', lineHeight: '10px' }}>bonus</Typography>
         </Box>
         <Box className="fccc fp13" >
-          {/* <Box component='img' sx={{ width: '50px' }} src={BettingRebate}></Box>
+          <Box component='img' sx={{ width: '50px' }} src={BettingRebate}></Box>
           <Typography className="fp13" sx={{ color: 'white' }}>Betting </Typography>
-          <Typography className="fp13" sx={{ color: 'white', lineHeight: '10px' }}>rebate</Typography> */}
+          <Typography className="fp13" sx={{ color: 'white', lineHeight: '10px' }}>rebate</Typography>
         </Box>
-      </Box>
-      <Stack direction="row" sx={style.act}>
+      </Box> */}
+      {/* <Stack direction="row" sx={style.act}>
         <Box sx={style.actimg} component={NavLink} to="/gift">
           <Box component="img" sx={{ width: "100%" }} src={banner1}></Box>
           <Typography variant="body1" color="initial">
@@ -106,7 +106,7 @@ function Activity() {
             The more consecutive days you sign in, the higher the reward will be.
           </Typography>
         </Box>
-      </Stack>
+      </Stack> */}
       <Stack sx={style.act2}>
         <Box sx={style.actimg2}>
           <Box

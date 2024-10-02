@@ -102,7 +102,7 @@ function Account() {
           </Container>
         </Box>
         <Box sx={{ position: 'relative', height: '233px', }}>
-          <Box sx={{ ...style.actionContainer, position: 'absolute', left: '2.5%', bottom: '24%' }}>
+          <Box sx={{ ...style.actionContainer, position: 'absolute', left: '2.5%', bottom: '50%' }}>
             <Box sx={{ borderBottom: '1px solid #5b5858', paddingBottom: '10px', mb: 2, }}>
               <Typography variant="body1" color="initial" sx={style.balanceText}>
                 Total Balance
@@ -141,28 +141,18 @@ function Account() {
                   Withdraw
                 </Typography>
               </Box>
-              <Box sx={style.actionBox} component={NavLink} to="/vip">
-                <Box component="img" src={edit} sx={style.actionImage} />
+              <Box sx={style.actionBox} component={NavLink} to="/wallet/Recharge">
+                <Box component="img" src={bep} sx={style.actionImage} />
                 <Typography variant="body1" color="initial" sx={style.actionText}>
-                  vip level
+                USDT Bep20
                 </Typography>
               </Box>
-              {/* <Box sx={style.actionBox2} component={NavLink} to="/vip" mt={2}>
-                <Box component="img" src={trc} sx={style.actionImage2} />
-                <Typography variant="body1" color="initial" sx={style.actionText2}>
-                  USDT TRC 20
-                </Typography>
-              </Box> */}
-              <Box sx={style.actionBox2} component={NavLink} to="/wallet/Recharge" mt={2}>
-                <Box component="img" src={bep} sx={style.actionImage2} />
-                <Typography variant="body1" color="initial" sx={style.actionText2}>
-                  USDT BEP 20
-                </Typography>
-              </Box>
+             
+           
             </Box>
           </Box>
         </Box>
-        <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-40px', width: '95%', ml: '2.5%', }}>
+        <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-100px', width: '95%', ml: '2.5%', }}>
           <NavLink to="/depositHistory">
             <Box className="flex gap-1 p-1 py-4 justify-center items-center shadow-xl  rounded-lg" sx={{ background: bglightgray }}>
               <Typography><img src={depo} alt="" className="w-10" /></Typography>
