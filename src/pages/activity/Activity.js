@@ -81,10 +81,10 @@ function Activity() {
           <Typography className="fp13" sx={{ color: 'white' }}>Invitation </Typography>
           <Typography className="fp13" sx={{ color: 'white', lineHeight: '10px' }}>bonus</Typography>
         </Box>
-        <Box className="fccc fp13" component={NavLink} to="/activity/Betting/rebate">
-          <Box component='img' sx={{ width: '50px' }} src={BettingRebate}></Box>
+        <Box className="fccc fp13" >
+          {/* <Box component='img' sx={{ width: '50px' }} src={BettingRebate}></Box>
           <Typography className="fp13" sx={{ color: 'white' }}>Betting </Typography>
-          <Typography className="fp13" sx={{ color: 'white', lineHeight: '10px' }}>rebate</Typography>
+          <Typography className="fp13" sx={{ color: 'white', lineHeight: '10px' }}>rebate</Typography> */}
         </Box>
       </Box>
       <Stack direction="row" sx={style.act}>

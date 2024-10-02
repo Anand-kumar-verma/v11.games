@@ -68,17 +68,17 @@ function TeamReports() {
               },
             }}
           >
-            <div style={{ paddingTop: '16px', color: bgtan, background: zubgtext, padding: '10px', borderRadius: '5px' }} className="!grid !grid-cols-6   !place-items-center ">
+            <div style={{ paddingTop: '16px', color: bgtan, background: zubgtext, padding: '10px 20px', borderRadius: '5px' }} className="flex justify-between  !place-items-center ">
               <span>S.No.</span>
-              <span>User Id</span>
+         
               <span className="!col-span-2">Name</span>
               <span className="!col-span-2">Mobile No</span>
             </div>
             {result?.filter((j) => j?.LEVEL === 1)?.map((i, index) => {
               return (
-                <div style={{ color: 'white', background: bglightgray, color: 'white', borderRadius: '5px', padding: '10px 20px', }} className="!grid !grid-cols-6   !place-items-center">
+                <div style={{ color: 'white', background: bglightgray, color: 'white', borderRadius: '5px', padding: '10px 20px', }} className="flex justify-between !place-items-center">
                   <span >{index + 1}</span>
-                  <span>{i?.id}</span>
+              
                   <span className="!text-center !col-span-2">{i?.full_name || "No data found"}</span>
                   <span className="!col-span-2">{i?.mobile || "987654210"}</span>
                 </div>

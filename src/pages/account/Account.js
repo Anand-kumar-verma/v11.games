@@ -88,7 +88,7 @@ function Account() {
                     <img src={vip} alt="" className=" w-12 ml-3" />
                   </Typography>
                 </Box>
-                <Box className=" w-40 h-6 rounded-full p-1   realtive !left-40 flex gap-3 justify-center" sx={{ background: bgtan }}>
+                <Box className="  h-6 rounded-full p-1   realtive !left-40 flex gap-3 justify-center" sx={{ background: bgtan }}>
                   <Typography className="text-white !text-xs">UID </Typography>
                   <Typography className="text-white !text-xs">| </Typography>
                   <Typography className="text-white !text-xs">{wallet?.username || 0}{" "}<CopyAll fontSize="small" /> </Typography>
@@ -147,13 +147,13 @@ function Account() {
                   vip level
                 </Typography>
               </Box>
-              <Box sx={style.actionBox2} component={NavLink} to="/vip" mt={2}>
+              {/* <Box sx={style.actionBox2} component={NavLink} to="/vip" mt={2}>
                 <Box component="img" src={trc} sx={style.actionImage2} />
                 <Typography variant="body1" color="initial" sx={style.actionText2}>
                   USDT TRC 20
                 </Typography>
-              </Box>
-              <Box sx={style.actionBox2} component={NavLink} to="/vip" mt={2}>
+              </Box> */}
+              <Box sx={style.actionBox2} component={NavLink} to="/wallet/Recharge" mt={2}>
                 <Box component="img" src={bep} sx={style.actionImage2} />
                 <Typography variant="body1" color="initial" sx={style.actionText2}>
                   USDT BEP 20

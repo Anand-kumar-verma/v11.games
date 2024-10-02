@@ -44,7 +44,7 @@ export const endpoint = {
   get_yesterday_deposit_withdrawl_by_treamFn: `${newdomain1}/api/v1/get_yesterday_deposit_withdrawl_by_treamFn`,
   top11winner: `${newdomain1}/api/v1/get-top-winners`,
   openbannerUrl: `${baseUrl}/popup`,
-  profiledata: `${baseUrl}/api/v1/profileapi`,
+  profiledata: `${newdomain}/api/v1/profileapi`,
   get_level: `${newdomain}/api/v1/get-level`,
   promotion_data: `${newdomain}/api/v1/promotiondata`,
   applybet: `${newdomain}/api/v1/bet`,
@@ -118,5 +118,7 @@ export const endpoint = {
   recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
   refferral_recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
   get_level_general: `${newdomain1}/api/v1/get_level_general_data`,
+  get_team_refferal: `${newdomain1}/api/v1/getTeamReferral_First_Recharge_salary`,
+  
 
 };

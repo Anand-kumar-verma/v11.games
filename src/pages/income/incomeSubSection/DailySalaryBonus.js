@@ -67,7 +67,7 @@ function DailySalaryBonus() {
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon style={{ color: bgtan }} />
             </Box>
-            <p style={{ color: bgtan }}>Daily Salary  Bonus</p>
+            <p style={{ color: bgtan }}> Daily Salary Income</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -91,7 +91,7 @@ function DailySalaryBonus() {
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Daily Salary</p>
+          <p style={{ color: bgtan }}>Daily Salary Income</p>
           <Box></Box>
         </Box>
         <div className="!overflow-x-auto" style={{ width: "95%", marginLeft: '2.5%', marginTop: '16px', }}>

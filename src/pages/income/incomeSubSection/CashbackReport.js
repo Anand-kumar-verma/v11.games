@@ -18,6 +18,7 @@ import { bgdarkgray, bgtan, zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtex
 import Layout from "../../../component/Layout/Layout";
 import {
   cashbackReportfn,
+  TeamrefferalFn,
 } from "../../../services/apicalling";
 import nodatafoundimage from "../../../assets/images/nodatafoundimage.png";
 import theme from "../../../utils/theme";
@@ -32,8 +33,8 @@ function CashbackReport() {
   };
 
   const { isLoading, data } = useQuery(
-    ["cashback_report"],
-    () => cashbackReportfn(),
+    ["team_refferal"],
+    () => TeamrefferalFn(),
     {
       refetchOnMount: false,
       refetchOnReconnect: false,
@@ -76,7 +77,7 @@ function CashbackReport() {
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
             </Box>
-            <p style={{ color: bgtan }}>Cashback Income</p>
+            <p style={{ color: bgtan }}>Team Referral First Recharge Salary Income</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -101,7 +102,7 @@ function CashbackReport() {
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Cashback Income</p>
+          <p style={{ color: bgtan }}>Team Referral First Recharge Salary Income</p>
           <Box></Box>
         </Box>
         <div className="!overflow-x-auto" style={{ width: "95%", marginLeft: '2.5%', marginTop: '16px', }}>

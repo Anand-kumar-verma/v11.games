@@ -455,6 +455,19 @@ export const VipIncomeFn = async () => {
   }
 };
 
+export const TeamrefferalFn = async () => {
+  //
+  try {
+    const response = await axios.get(
+      `${endpoint.get_team_refferal}?user_id=${user_id}`
+    );
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
+
 export const WeeklySalaryIncomeFn = async () => {
   //
   try {
