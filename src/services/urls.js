@@ -15,7 +15,7 @@ export const newdomainn = "https://api.v11.games";
 
 export const domain = "https://v11-timer.onrender.com";
 export const support_mail = "";
-export const telegram_url = "";
+export const telegram_url = "https://t.me/+MOBF6OxBH1oyZGU1";
 export const facebook_url = "";
 export const instagram_url = "";
 
