@@ -83,7 +83,7 @@ function MainPageOFIncome() {
     // },
     {
       to: "/account/income-main/cash_back_report",
-      name: "Team Referral First Recharge Salary Income",
+      name: "Referral First Recharge Bonus",
       logo: <StoreIcon className="!w-[40px] !h-[40px] !text-white" color="#8f5206" sx={{ filter: 'invert(1)' }} />,
     },
   ];

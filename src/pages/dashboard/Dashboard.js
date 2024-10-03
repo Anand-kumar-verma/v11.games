@@ -32,10 +32,8 @@ import { bgdarkgray, bggold, bggrad, bggray, bglightgray, bgtan, zubgshadow } fr
 import aviator_game_image from "../../assets/aviator_game_image.png";
 import crown1 from "../../assets/crown1.png";
 import crown2 from "../../assets/crown2.png";
-import aviater from "../../assets/images/avioter.png";
-import k3lottery from "../../assets/images/k3lottery.png";
-import fivedlooter from "../../assets/images/5dlottery.png";
 import crown3 from "../../assets/crown3.png";
+import aviater from "../../assets/images/avioter.png";
 import trximg from "../../assets/images/f233fc5431d2b61e65327cc77d9bb1f8.png";
 import stage from "../../assets/images/podium.png";
 import trx from '../../assets/images/trx.png';
@@ -67,10 +65,7 @@ import {
   telegram_url,
 } from "../../services/urls";
 import theme from "../../utils/theme";
-import MyModal from '../../Shared/Modal';
-// import Lottery from "./DashboadSubcomponent/Lottery";
-// import Original from "./DashboadSubcomponent/Original";
-// import Sports from "./DashboadSubcomponent/Sports";
+
 
 const imageSources = [
   "https://mui.com/static/images/avatar/2.jpg",
@@ -93,21 +88,16 @@ function Dashboard() {
   };
 
   const dispatch = useDispatch();
-  // const isAvailableUser = sessionStorage.getItem("isAvailableUser");
 
   const navigate = useNavigate();
-  // const [poicy, setpoicy] = React.useState(false);
-  const [type_of_game, settype_of_game] = React.useState("");
   const [winnner_data, setwinnerdata] = useState([]);
-  // const [openbannerurl, setopenbannerurl] = useState("");
   const [loding, setloding] = useState(false);
-  // const [lodingBanner, setlodingBanner] = useState(false);
 
   useEffect(() => {
     if (!checkTokenValidity()) {
       localStorage.clear();
       sessionStorage.clear();
-      window.location.href = "/"; // Redirect to login page
+      window.location.href = "/"; 
     }
   }, []);
 
@@ -117,7 +107,6 @@ function Dashboard() {
   };
 
   const top11WinnerFunction = async () => {
-    // setloding(true);
     try {
       const response = await axios.get(`${endpoint.top11winner}`);
       setwinnerdata(response?.data?.data);
@@ -145,23 +134,11 @@ function Dashboard() {
   }, [Number(data?.data?.data?.wallet), Number(data?.data?.data?.winning)]);
 
   useEffect(() => {
-    // openbannerFunction();
     localStorage.removeItem("amount_set");
     localStorage.removeItem("Deposit_type");
     localStorage.removeItem("server_provider");
   }, []);
 
-  // const openbannerFunction = async () => {
-  //   setlodingBanner(true);
-  //   try {
-  //     const response = await axios.get(`${endpoint.openbannerUrl}`);
-  //     setopenbannerurl(response?.data?.image);
-  //   } catch (e) {
-  //     toast(e?.message);
-  //     console.log(e);
-  //   }
-  //   setlodingBanner(false);
-  // };
 
   const initialValues = {
     referrel_code: `${fron_end_main_domain}/register?ref=${wallet?.referral_code}`,
@@ -175,32 +152,14 @@ function Dashboard() {
     },
   });
 
-  // const handleClosepolicy = () => {
-  //   setpoicy(false);
-  //   sessionStorage.removeItem("isAvailableUser");
-  // };
-
-  // useEffect(() => {
-  //   if (isAvailableUser) {
-  //     setpoicy(true);
-  //   }
-  // }, []);
 
   useEffect(() => {
     dispatch(waitingAviatorFun(true));
     dispatch(please_reconnect_the_serverFun(false));
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
-  // useEffect(() => {
-  //   !aviator_login_data && get_user_data_fn(dispatch);
-  // }, []);
+
 
   const game_data = [
     {
@@ -248,7 +207,7 @@ function Dashboard() {
         </Box>
         <Box sx={{ ...flexbetween }} >
           <Typography variant="body1" className="funp13" sx={{ color: bggold }}>Welcome to V11 Game</Typography>
-          <NavLink component={NavLink}>
+          <NavLink component={NavLink} to ="/ticket">
             <Box component='img' sx={{ width: '120px' }} src={customer} ></Box>
           </NavLink>
         </Box>
@@ -365,7 +324,6 @@ function Dashboard() {
                 id="referrel_code"
                 name="referrel_code"
                 value={fk.values.referrel_code}
-                // onChange={fk.handleChange}
                 sx={styles.referralLinkInput}
               />
               <Button
@@ -408,74 +366,6 @@ function Dashboard() {
               </Button>
             </Stack>
           </Box>
-
-
-          {/* <div
-            className="mt-2 w-full grid grid-cols-3 gap-[2%] o"
-            style={{
-              width: "95%",
-              marginLeft: "2.5%",
-              marginTop: "20px",
-              mb: "20px",
-            }}
-          >
-            {game_data?.map((i) => {
-              return (
-                <Box component={NavLink} to={`/${i?.url}`}>
-                  <Box
-                    sx={{
-                      marginBottom: "10px",
-                      width: "95%",
-                      borderRadius: "7px 7px 7px 7px !important",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <a
-                      onClick={() => {
-                        if (
-                          i.name === "Slots" ||
-                          i.name === "Popular" ||
-                          i.name === "Casino"
-                        )
-                          return toast("Comming Soon !", { id: 1 });
-                        scrollToSection("games");
-                        settype_of_game(i?.name);
-                      }}
-                      href={`${i?.name}`}
-                      style={{
-                        backgroundImage: `url(${bgms})`,
-                        filter: "hue-rotate(45deg)",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "100% 100%",
-                        padding: "15px 15px 15px 15px",
-                        borderRadius: "7px 7px 0px 0px !important",
-                      }}
-                      className="cursor-pointer   flex flex-col items-center justify-center"
-                    >
-                      <img
-                        style={{ filter: "hue-rotate(311deg)" }}
-                        className="w-[90px] h-[90px] "
-                        src={i?.img}
-                      />
-                    </a>
-                    <p
-                      className="!text-sm font-bold"
-                      style={{
-                        color: "white",
-                        background: lightyellow,
-                        width: "100%",
-                        textAlign: "center",
-                        padding: "5px 0px",
-                        borderRadius: "0px 0px 7px 7px !important",
-                      }}
-                    >
-                      {i?.name}
-                    </p>
-                  </Box>
-                </Box>
-              );
-            })}
-          </div> */}
           <Box >
             <Box sx={{ mt: 3, width: '95%', ml: '2.5%', }}>
               <Stack direction='row' alignItems='center'>
@@ -543,17 +433,6 @@ function Dashboard() {
               </Box>
             </Box>
           </Box>
-          {/* <Box id="games">
-            <div id="game_lottery">
-              {type_of_game === "Wingo" && <Lottery />}
-            </div>
-            <div id="game_original">
-              {type_of_game === "Aviator" && <Original />}
-            </div>
-            <div id="game_sports">
-              {type_of_game === "Sports" && <Sports />}
-            </div>
-          </Box> */}
           {loding ? (
             <div className="w-[100%] flex justify-center">
               <CircularProgress className="!text-#E71D1E" />
@@ -819,125 +698,6 @@ function Dashboard() {
               );
             })}
           </Box>
-          {/* <Box sx={styles.wininfoouter} >
-            <Stack direction={"row"} sx={{ alignItems: "center", mb: 2, }}>
-              <Box
-                sx={{
-                  background: 'white',
-                  width: "4px",
-                  height: "16px",
-                }}
-              ></Box>
-              <Typography
-                variant="body1"
-
-                sx={{ fontSize: "18px", fontWeight: 700, ml: 1, color: 'white' }}
-              >
-                Last Trade Top Winner
-              </Typography>
-            </Stack>
-            {winnner_data?.slice(3, 8)?.map((i, index) => {
-              return (
-                <Stack
-                  key={index}
-                  direction="row"
-                  sx={styles.winnerslider}
-                >
-                  <div style={{ position: 'relative' }}>
-                    <Box
-                      width={25}
-                      height={25}
-                      component={"img"}
-                      src={crown2}
-                      sx={styles.bca}
-                    ></Box>
-                    <Box
-                      component={"img"}
-                      src={imageSources[index]}
-                      alt={`Profile ${index + 1} `}
-                      width={45}
-                      height={45}
-                      sx={styles.winnerprofile}
-                    ></Box>
-
-                  </div>
-                  <Typography
-                    variant="body1"
-
-                    sx={styles.winnername}
-                  >
-                    <p className="!flex !flex-col" style={{ color: 'white' }}>
-                      <span>tanve***</span>
-                      <span>fun@859***</span>
-                    </p>
-                  </Typography>
-                  <Box sx={styles.winnerbannerouter}>
-                    <Box
-                      height={45}
-                      component={"img"}
-                      src={winerbanner1}
-                      sx={styles.winnerbannerinner}
-                    ></Box>
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant="body1"
-
-                      sx={styles.winneramout || 0}
-                    >
-                      Receive ₹{Number(i?.win || 0)?.toFixed(2)}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-
-                      sx={styles.winnertitle}
-                    >
-                      Winning amount
-                    </Typography>
-                  </Box>
-                </Stack>
-              );
-            })}
-          </Box> */}
-          {/* {poicy && !lodingBanner && (
-            <Dialog
-              open={poicy}
-              TransitionComponent={Transition}
-              keepMounted
-              onClose={handleClosepolicy}
-              aria-describedby="alert-dialog-slide-description"
-              PaperProps={{ className: `!max - w - [500px] ${gray} ` }}
-            >
-              <div
-                style={{
-                  background: zubgtext,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "15px",
-                }}
-              >
-                {!openbannerurl ||
-                  (openbannerurl === "" && (
-                    <p style={{ color: "white", fontSize: "14px" }}>
-                      Notification
-                    </p>
-                  ))}
-                <RxCross2
-                  style={{ color: "white" }}
-                  onClick={handleClosepolicy}
-                />
-              </div>
-              <DialogContent style={{ background: zubgback }}>
-                {!openbannerurl || openbannerurl === "" ? (
-                  <Notification handleClosepolicy={handleClosepolicy} />
-                ) : (
-                  <img src={openbannerurl} className="w-[100%] h-[100%]" />
-                )}
-              </DialogContent>
-            </Dialog>
-          )} */}
-          {/* <MyModal /> */}
         </Container>
       </Box>
       <CustomCircularProgress isLoading={isLoading || isLoading} />

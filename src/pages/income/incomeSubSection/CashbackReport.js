@@ -77,7 +77,7 @@ function CashbackReport() {
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
             </Box>
-            <p style={{ color: bgtan }}>Team Referral First Recharge Salary Income</p>
+            <p style={{ color: bgtan }}>Referral First Recharge Bonus</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -102,7 +102,7 @@ function CashbackReport() {
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Team Referral First Recharge Salary Income</p>
+          <p style={{ color: bgtan }}>Referral First Recharge Bonus</p>
           <Box></Box>
         </Box>
         <div className="!overflow-x-auto" style={{ width: "95%", marginLeft: '2.5%', marginTop: '16px', }}>
@@ -112,7 +112,7 @@ function CashbackReport() {
                 <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r  !text-center !border-b !border-white">S.No</TableCell>
                 <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Date/Time</TableCell>
                 <TableCell sx={{ color: 'white' }} className=" !font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Amount</TableCell>
-                <TableCell sx={{ color: 'white' }} className="!font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Transaction Type</TableCell>
+                <TableCell sx={{ color: 'white' }} className="!font-bold !border !text-xs !border-r !text-center  !border-b !border-white">Description</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

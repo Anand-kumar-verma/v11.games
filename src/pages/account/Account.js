@@ -16,9 +16,7 @@ import n1 from "../../assets/images/n1.png";
 import not from "../../assets/images/not.png";
 import dp1 from "../../assets/images/pr.png";
 import star from "../../assets/images/star.png";
-import trc from "../../assets/images/tether-usdt-logo-FA55C7F397-seeklogo.com.png";
 import vip from "../../assets/images/vip.png";
-import edit from "../../assets/images/vipicon.png";
 import wit from "../../assets/images/witt.png";
 import wtd from "../../assets/rechargeIcon.png";
 import s from "../../assets/wdhistory.png";
@@ -223,9 +221,7 @@ function Account() {
               borderRadius: "10px",
             }}
           >
-            
-          
-          </Stack>
+           </Stack>
         </Box>
         <Box
           sx={{
@@ -245,9 +241,7 @@ function Account() {
             Logout
           </Button>
         </Box>
-    
         <CustomCircularProgress isLoading={isLoading} />
-      
       </Container>
     </Layout>
   );

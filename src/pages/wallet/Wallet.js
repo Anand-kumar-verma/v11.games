@@ -202,7 +202,7 @@ function Wallet() {
                     color="initial"
                     sx={{ color: "white", fontWeight: "500" }}
                   >
-                    Bonus Amount
+                    Main Amount
                   </Typography>
                 </Box>
               </Box>

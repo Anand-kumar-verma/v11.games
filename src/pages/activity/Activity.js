@@ -128,7 +128,7 @@ function Activity() {
             V11 Game CREATIVE VIDEO CONTEST
           </Typography>
         </Box>
-        <Box sx={style.actimg2}>
+        {/* <Box sx={style.actimg2}>
           <Box
             component="img"
             sx={{ width: "100%", borderRadius: "10px 10px 0px 0px" }}
@@ -137,7 +137,7 @@ function Activity() {
           <Typography variant="body1" color="initial">
             WINSTREAK 2X PRIZE HAPPY HOUR
           </Typography>
-        </Box>
+        </Box> */}
         {/* <MyModal /> */}
       </Stack>
     </Layout >
