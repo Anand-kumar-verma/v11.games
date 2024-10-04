@@ -72,7 +72,7 @@ function TeamReports() {
               <span>S.No.</span>
          
               <span className="!col-span-2">Name</span>
-              <span className="!col-span-2">USER ID</span>
+              <span className="!col-span-2">User ID</span>
             </div>
             {result?.filter((j) => j?.LEVEL === 1)?.map((i, index) => {
               return (
