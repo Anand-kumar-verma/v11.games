@@ -24,6 +24,8 @@ import dpt from "../../assets/withdrow.png";
 import Layout from "../../component/Layout/Layout";
 import { walletamount } from "../../services/apicalling";
 import { baseUrl, fron_end_main_domain } from "../../services/urls";
+import copy from "clipboard-copy";
+import toast from 'react-hot-toast';
 
 function Account() {
   const [opend, setOpend] = useState(false);
@@ -32,7 +34,10 @@ function Account() {
   const transactionId = searchParams?.get("order_id");
   const client = useQueryClient();
   const navigate = useNavigate();
-
+  const functionTOCopy = (value) => {
+    copy(value);
+    toast.success("Copied to clipboard!");
+  }; 
   const { isLoading, data: amount } = useQuery(["walletamount"], () => walletamount(), {
     refetchOnMount: false,
     refetchOnReconnect: true,
@@ -82,14 +87,14 @@ function Account() {
               <Box className="flex flex-col ">
                 <Box className="flex justify-start items-center mt-5">
                   <Typography sx={{ color: bgtan, fontWeight: '700', }}>{wallet?.full_name}</Typography>
-                  <Typography>
+                  {/* <Typography>
                     <img src={vip} alt="" className=" w-12 ml-3" />
-                  </Typography>
+                  </Typography> */}
                 </Box>
                 <Box className="  h-6 rounded-full p-1   realtive !left-40 flex gap-3 justify-center" sx={{ background: bgtan }}>
                   <Typography className="text-white !text-xs">UID </Typography>
                   <Typography className="text-white !text-xs">| </Typography>
-                  <Typography className="text-white !text-xs">{wallet?.username || 0}{" "}<CopyAll fontSize="small" /> </Typography>
+                  <Typography className="text-white !text-xs">{wallet?.username || 0}{" "}<CopyAll className='!cursor-pointer' fontSize="small" onClick={() => functionTOCopy(wallet?.username)}/> </Typography>
                 </Box>
                 <p style={{ color: 'white', marginTop: '2px' }}>
                   Mobile No :  {wallet?.mob_no || 0}{" "}
@@ -100,7 +105,7 @@ function Account() {
           </Container>
         </Box>
         <Box sx={{ position: 'relative', height: '233px', }}>
-          <Box sx={{ ...style.actionContainer, position: 'absolute', left: '2.5%', bottom: '50%' }}>
+          <Box sx={{ ...style.actionContainer, position: 'absolute', left: '2.5%', bottom: '45%' }}>
             <Box sx={{ borderBottom: '1px solid #5b5858', paddingBottom: '10px', mb: 2, }}>
               <Typography variant="body1" color="initial" sx={style.balanceText}>
                 Total Balance
@@ -150,7 +155,7 @@ function Account() {
             </Box>
           </Box>
         </Box>
-        <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-100px', width: '95%', ml: '2.5%', }}>
+        <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-90px', width: '95%', ml: '2.5%', }}>
           <NavLink to="/depositHistory">
             <Box className="flex gap-1 p-1 py-4 justify-center items-center shadow-xl  rounded-lg" sx={{ background: bglightgray }}>
               <Typography><img src={depo} alt="" className="w-10" /></Typography>
