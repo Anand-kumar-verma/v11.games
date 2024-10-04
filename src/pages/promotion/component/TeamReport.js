@@ -72,7 +72,7 @@ function TeamReports() {
               <span>S.No.</span>
          
               <span className="!col-span-2">Name</span>
-              <span className="!col-span-2">Mobile No</span>
+              <span className="!col-span-2">USER ID</span>
             </div>
             {result?.filter((j) => j?.LEVEL === 1)?.map((i, index) => {
               return (
@@ -80,7 +80,7 @@ function TeamReports() {
                   <span >{index + 1}</span>
               
                   <span className="!text-center !col-span-2">{i?.full_name || "No data found"}</span>
-                  <span className="!col-span-2">{i?.mobile || "987654210"}</span>
+                  <span className="!col-span-2">{i?.username || 0 }</span>
                 </div>
               );
             })}
