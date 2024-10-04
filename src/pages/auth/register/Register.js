@@ -46,7 +46,7 @@ function Register() {
   const [loding, setloding] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const url = new URL(window.location.href);
-  const [refParam, setrefParam] = useState(url.searchParams.get("ref") || "");
+  const [refParam, setrefParam] = useState(url.searchParams.get("ref") || "1727341379010");
   const handle_confirm_ClickShowPassword = () =>
     set_show_confirm_password(!show_confirm_password);
 
