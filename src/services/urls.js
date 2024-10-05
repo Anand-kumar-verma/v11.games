@@ -10,10 +10,10 @@ export const newdomain = "https://api.v11.games";
 export const newdomainn = "https://api.v11.games";
 
 
-// export const newdomain1 = "http://192.168.18.183:9000";
-// export const newdomainn = "http://192.168.18.183:9000";
+export const dummy_aviator = "http://192.168.18.183:9999";
+export const domain = "http://192.168.18.183:9999";
 
-export const domain = "https://v11-timer.onrender.com";
+// export const domain = "https://v11-timer.onrender.com";
 export const support_mail = "";
 export const telegram_url = "https://t.me/+MOBF6OxBH1oyZGU1";
 export const facebook_url = "";
@@ -120,5 +120,14 @@ export const endpoint = {
   get_level_general: `${newdomain1}/api/v1/get_level_general_data`,
   get_team_refferal: `${newdomain1}/api/v1/getTeamReferral_First_Recharge_salary`,
   
+  
+  node_api:{
+    get_leder_data:`${dummy_aviator}/api/v1/get-ledger-data`,
+    my_history: `${dummy_aviator}/api/v1/my-history-by-user-id`,
+    login_with_node:`${dummy_aviator}/api/v1/createuser`,
+    main_wallet:`${dummy_aviator}/main-wallet-to-aviator`,
+    aviator_main:`${dummy_aviator}/aviator-to-main-wallet`,
+    get_top_users: `${dummy_aviator}/api/v1/get-top-users`,
+  }
 
 };

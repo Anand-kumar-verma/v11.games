@@ -12,6 +12,8 @@ import AddIcon from '@mui/icons-material/Add';
 import { Draggable } from 'react-draggable';
 import Otpverify from "./pages/auth/login/Otpverify";
 import Changepassword from "./pages/auth/login/Changepassword";
+import LayoutAviator from "./GamePage/Layout";
+import PlayGame from "./GamePage/PlayGame";
 
 const App = () => {
   const isAuthenticated =
@@ -35,6 +37,10 @@ const App = () => {
         <Route path="/otp" element={<Otpverify />} />
         <Route path="/changepassword" element={<Changepassword />} />
         <Route path="/register" element={<Register />} />
+        <Route
+        path="/playgame"
+        element={<LayoutAviator component={<PlayGame />} />}
+      />
 
         {isAuthenticated ? (
           routes?.map((route, index) => {

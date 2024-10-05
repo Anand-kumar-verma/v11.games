@@ -1,5 +1,5 @@
 import axios from "axios";
-import { endpoint } from "../urls";
+import { dummy_aviator, endpoint } from "../urls";
 import toast from "react-hot-toast";
 import { aviator_login_data_fn } from "../../redux/slices/counterSlice";
 import CryptoJS from "crypto-js";
@@ -566,6 +566,30 @@ export const getTicketRaisedHistory = async () => {
   try {
     const response = await axios.get(
       `${endpoint.ticket_raised_history}?user_id=${user_id}`
+    );
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
+
+
+export const GetTopFn = async () => {
+  try {
+    const response = await axios.get(endpoint.node_api.get_top_users);
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
+export const walletamountAviator = async () => {
+  try {
+
+    const response = await axios.post(
+      `${dummy_aviator}/api/v1/get-wallet-amount-by-id`,
+      { id: user_id }
     );
     return response;
   } catch (e) {

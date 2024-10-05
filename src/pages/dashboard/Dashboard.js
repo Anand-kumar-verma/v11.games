@@ -88,7 +88,7 @@ function Dashboard() {
   };
 
   const dispatch = useDispatch();
-
+  const [status, setStatus] = useState(false);
   const navigate = useNavigate();
   const [winnner_data, setwinnerdata] = useState([]);
   const [loding, setloding] = useState(false);
@@ -196,6 +196,19 @@ function Dashboard() {
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
   });
+
+  const getStatus = async () => {
+    try {
+      const res = await axios.get(endpoint.get_status);
+      setStatus(res?.data?.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    getStatus();
+  }, []);
+
   return (
     <Layout header={false} >
       <Box sx={styles.root}>
@@ -380,7 +393,11 @@ function Dashboard() {
                   <Box sx={{ ...styles.gamenamebox }}>
                     <Box sx={{ ...flexbetween }}>
                       <Typography variant="h4" sx={{ fontWeight: '700', color: 'white', fontSize: '20px', }} >Win Go</Typography>
-                      <Button onClick={() => navigate('/win')} variant="text" color="primary" sx={{ ...styles.playbutton }}> Go <StartIcon ml={2} /></Button>
+                      <Button   onClick={() => {
+                          if (status?.find((i)=>i?.title==="wingo_status")?.longtext !== "0") {
+                            navigate("/win");
+                          }
+                        }} variant="text" color="primary" sx={{ ...styles.playbutton }}> Go <StartIcon ml={2} /></Button>
                     </Box>
                     <Box sx={{ ...flexbetween, my: 1, ...styles.maxwin }}>
                       <Typography className='w fp13 fw400 ' sx={{ color: 'white', fontFamily: 'roboto !important' }} >The Highest Bounus in history</Typography>
@@ -399,7 +416,11 @@ function Dashboard() {
                   <Box sx={{ ...styles.gamenamebox }}>
                     <Box sx={{ ...flexbetween }}>
                       <Typography variant="h4" sx={{ fontWeight: '700', color: 'white', fontSize: '20px', }} >TRX</Typography>
-                      <Button onClick={() => navigate('/trx')} variant="text" color="primary" sx={{ ...styles.playbutton }}> Go <StartIcon ml={2} /></Button>
+                      <Button onClick={() => {
+                          if (status?.find((i)=>i?.title==="trx_status")?.longtext !== "0") {
+                            navigate("/trx");
+                          }
+                        }} variant="text" color="primary" sx={{ ...styles.playbutton }}> Go <StartIcon ml={2} /></Button>
                     </Box>
                     <Box sx={{ ...flexbetween, my: 1, ...styles.maxwin }}>
                       <Typography className='w fp13 fw400 ' sx={{ color: 'white', fontFamily: 'roboto !important' }} >The Highest Bounus in history</Typography>
@@ -418,7 +439,11 @@ function Dashboard() {
                   <Box sx={{ ...styles.gamenamebox }}>
                     <Box sx={{ ...flexbetween }}>
                       <Typography variant="h4" sx={{ fontWeight: '700', color: 'white', fontSize: '20px', }} >Aviator</Typography>
-                      <Button onClick={() => navigate('/')} variant="text" color="primary" sx={{ ...styles.playbutton }}> Go <StartIcon ml={2} /></Button>
+                      <Button onClick={() => {
+                          if (status?.find((i)=>i?.title==="aviator_staus")?.longtext !== "0") {
+                            navigate("/playgame");
+                          }
+                        }} variant="text" color="primary" sx={{ ...styles.playbutton }}> Go <StartIcon ml={2} /></Button>
                     </Box>
                     <Box sx={{ ...flexbetween, my: 1, ...styles.maxwin }}>
                       <Typography className='w fp13 fw400 ' sx={{ color: 'white', fontFamily: 'roboto !important' }} >The Highest Bounus in history</Typography>
