@@ -10,10 +10,10 @@ export const newdomain = "https://api.v11.games";
 export const newdomainn = "https://api.v11.games";
 
 
-export const dummy_aviator = "http://192.168.18.183:9999";
-export const domain = "http://192.168.18.183:9999";
-
-// export const domain = "https://v11-timer.onrender.com";
+// export const dummy_aviator = "http://192.168.18.183:9999";
+// export const domain = "http://192.168.18.183:9999";
+export const dummy_aviator = "https://v11-timer.onrender.com";
+export const domain = "https://v11-timer.onrender.com";
 export const support_mail = "";
 export const telegram_url = "https://t.me/+MOBF6OxBH1oyZGU1";
 export const facebook_url = "";
