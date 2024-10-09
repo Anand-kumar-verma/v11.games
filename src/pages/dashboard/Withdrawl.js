@@ -121,7 +121,7 @@ function Withdrawl() {
 
   const fk = useFormik({
     initialValues: initialValues,
-    validationSchema: withdraw_amount_validation_schema,
+    // validationSchema: withdraw_amount_validation_schema,
     onSubmit: () => {
       // if (type) {
       //   if (Number(amount?.cricket_wallet || 0) < Number(fk.values.amount || 0))
@@ -399,9 +399,8 @@ function Withdrawl() {
       </div>
     ) : 
      <>
-     <p className="text-white "><span className="!text-black !font-bold">Account No : </span> {result?.[0]?.account}</p>
-     <p className="text-white "><span className="!text-black !font-bold">IFSC Code  : </span> {result?.[0]?.ifsc}</p>
-
+     <p className="text-white ">Account No : {result?.[0]?.account}</p>
+     <p className="text-white ">IFSC Code  : {result?.[0]?.ifsc}</p>
      </>
     }
     

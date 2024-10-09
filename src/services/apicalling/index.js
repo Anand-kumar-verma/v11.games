@@ -1,5 +1,5 @@
 import axios from "axios";
-import { endpoint } from "../urls";
+import { dummy_aviator, endpoint } from "../urls";
 import toast from "react-hot-toast";
 import { aviator_login_data_fn } from "../../redux/slices/counterSlice";
 import CryptoJS from "crypto-js";
@@ -14,7 +14,7 @@ const user_id = value && JSON.parse(value)?.UserID;
 
 export const MyProfileDataFn = async () => {
   try {
-    const response = await axios.get(`${endpoint.profiledata}?id=${user_id}`);
+    const response = await axios.get(`${endpoint.profiledata}?user_id=${user_id}`);
     return response;
   } catch (e) {
     toast(e?.message);
@@ -236,7 +236,7 @@ export const depositHistoryFunction = async () => {
 export const depositHistoryUsdtFunction = async () => {
   try {
     const response = await axios.get(
-      `${endpoint.deposit_history_usdt}?userid=${user_id}`
+      `${endpoint.deposit_history_usdt}?user_id=${user_id}`
     );
     return response;
   } catch (e) {
@@ -270,7 +270,7 @@ export const withdrawlHistoryFunction = async () => {
 export const withdrawlHistoryUSdtFunction = async () => {
   try {
     const response = await axios.get(
-      `${endpoint.withdrawl_usdt_history}?userid=${user_id}`
+      `${endpoint.withdrawl_usdt_history}?user_id=${user_id}`
     );
     return response;
   } catch (e) {
@@ -395,6 +395,18 @@ export const AttendenceIncomeFn = async () => {
     console.log(e);
   }
 };
+export const RechargeIncomeFn = async () => {
+  //
+  try {
+    const response = await axios.get(
+      `${endpoint.recharge_income}?user_id=${user_id}`
+    );
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
 
 export const InvitationIncomeFn = async () => {
   //
@@ -408,15 +420,25 @@ export const InvitationIncomeFn = async () => {
     console.log(e);
   }
 };
-export const StreakIncomeFn = async () => {
+export const ReferralrechargeIncomeFn = async () => {
   //
   try {
     const response = await axios.get(
-      `${endpoint.streak_income}?user_id=${user_id}`
+      `${endpoint.refferral_recharge_income}?user_id=${user_id}`
     );
     return response;
   } catch (e) {
     toast(e?.message);
+    console.log(e);
+  }
+};
+export const MygetdataLevelFn = async () => {
+  try {
+    const response = await axios.get(
+      `${endpoint.get_level_general}?user_id=${Number(user_id)}`
+    );
+    return response;
+  } catch (e) {
     console.log(e);
   }
 };
@@ -425,6 +447,19 @@ export const VipIncomeFn = async () => {
   try {
     const response = await axios.get(
       `${endpoint.vip_income}?user_id=${user_id}`
+    );
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
+
+export const TeamrefferalFn = async () => {
+  //
+  try {
+    const response = await axios.get(
+      `${endpoint.get_team_refferal}?user_id=${user_id}`
     );
     return response;
   } catch (e) {
@@ -531,6 +566,30 @@ export const getTicketRaisedHistory = async () => {
   try {
     const response = await axios.get(
       `${endpoint.ticket_raised_history}?user_id=${user_id}`
+    );
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
+
+
+export const GetTopFn = async () => {
+  try {
+    const response = await axios.get(endpoint.node_api.get_top_users);
+    return response;
+  } catch (e) {
+    toast(e?.message);
+    console.log(e);
+  }
+};
+export const walletamountAviator = async () => {
+  try {
+
+    const response = await axios.post(
+      `${dummy_aviator}/api/v1/get-wallet-amount-by-id`,
+      { id: user_id }
     );
     return response;
   } catch (e) {

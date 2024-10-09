@@ -1,19 +1,21 @@
 export const rupees = "₹";
 // https://admin.bngwin.live/
 
-export const baseUrl = "https://api.v11.games";
+export const baseUrl = "https://admin.v11.games";
 // export const baseUrl = "https://api.bngwin.live";
 export const fron_end_main_domain = "https://v11.games";
 
 export const newdomain1 = "https://api.v11.games";
 export const newdomain = "https://api.v11.games";
+export const newdomainn = "https://api.v11.games";
 
-// export const newdomain1 = "http://192.168.18.183:9001";
-// export const newdomain = "http://192.168.18.183:9001";
 
-export const domain = "https://funxplora-timer.onrender.com";
+// export const dummy_aviator = "http://192.168.18.183:9999";
+// export const domain = "http://192.168.18.183:9999";
+export const dummy_aviator = "https://v11-timer.onrender.com";
+export const domain = "https://v11-timer.onrender.com";
 export const support_mail = "";
-export const telegram_url = "";
+export const telegram_url = "https://t.me/+MOBF6OxBH1oyZGU1";
 export const facebook_url = "";
 export const instagram_url = "";
 
@@ -23,26 +25,26 @@ export const endpoint = {
   login: `${newdomain}/api/v1/user_login`,
   send_otp: `${baseUrl}/api/forget-password`,
   veryfy_otp: `${baseUrl}/api/user-otp-verify`,
-  signup: `${baseUrl}/api/v1/signup`,
-  get_name_by_referral_code: `${baseUrl}/api/v1/get-sponsor-name`,
-  ticket_raised: `${baseUrl}/api/v1/ticket-raised`,
-  ticket_raised_history: `${baseUrl}/api/v1/ticket-raised-history`,
+  signup: `${newdomain}/api/v1/signup`,
+  get_name_by_referral_code: `${newdomain}/api/v1/get-sponsor-name`,
+  ticket_raised: `${newdomain}/api/v1/ticket-raised`,
+  ticket_raised_history: `${newdomain}/api/v1/ticket-raised-history`,
   attendence_income: `${newdomain1}/api/v1/get-welcome-bonus`,
-  claim_income: `${baseUrl}/api/v1/clame-bonus`,
-  invitation_income: `${baseUrl}/api/v1/inivitation-bonus`,
-  streak_income: `${baseUrl}/api/v1/winning-streak-bonus`,
-  vip_income: `${baseUrl}/api/v1/vip-bonus`,
-  deposit_bonus: `${baseUrl}/api/v1/get-deposit-bonus-income/`,
-  daily_income: `${baseUrl}/api/v1/daily-salary-income`,
-  forget_pass: `${baseUrl}/api/v1/forget-password-send-otp`,
-  otp_verify: `${baseUrl}/api/v1/forget-password-veryfy-otp`,
-  change_password: `${baseUrl}/api/v1/forget-password-change-pass`,
+  claim_income: `${newdomain}/api/v1/clame-bonus`,
+  invitation_income: `${newdomain}/api/v1/inivitation-bonus`,
+  vip_income: `${newdomain}/api/v1/vip-bonus`,
+  deposit_bonus: `${newdomain}/api/v1/get-deposit-bonus-income/`,
+  daily_income: `${newdomain}/api/v1/daily-salary-income`,
+  forget_pass: `${newdomain}/api/v1/forget-password-send-otp`,
+  otp_verify: `${newdomain}/api/v1/forget-password-veryfy-otp`,
+  change_password: `${newdomain}/api/v1/forget-password-change-pass`,
+  forget_password: `${newdomain}/api/v1/change-password`,
 
   userwallet: `${newdomain1}/api/v1/userwallet`,
   get_yesterday_deposit_withdrawl_by_treamFn: `${newdomain1}/api/v1/get_yesterday_deposit_withdrawl_by_treamFn`,
   top11winner: `${newdomain1}/api/v1/get-top-winners`,
   openbannerUrl: `${baseUrl}/popup`,
-  profiledata: `${baseUrl}/api/profileapi`,
+  profiledata: `${newdomain}/api/v1/profileapi`,
   get_level: `${newdomain}/api/v1/get-level`,
   promotion_data: `${newdomain}/api/v1/promotiondata`,
   applybet: `${newdomain}/api/v1/bet`,
@@ -54,11 +56,11 @@ export const endpoint = {
 
   //payment
   payment: `${newdomain1}/api/v1/payment`,
-  deposit_history_usdt: `${newdomain1}/api/v1/coin-payment-deposit-history`,
+  deposit_history_usdt: `${newdomain1}/api/v1/deposit-history-usdt`,
   withdrawal_request_usdt: `${newdomain1}/api/v1/payout-request`,
   withdrawal_address_usdt: `${newdomain1}/api/v1/add-usdt-address`,
   get_address_list: `${newdomain1}/api/v1/usdt-address-record`,
-  withdrawl_usdt_history: `${newdomain1}/api/v1/coin-payment-withdrawl-history`,
+  withdrawl_usdt_history: `${newdomain1}/api/v1/withdrawal-history-usdt`,
 
   check_result: `${baseUrl}/api/checkresult`,
   color_winning: `${baseUrl}/api/colour_winning`,
@@ -68,21 +70,21 @@ export const endpoint = {
 
   payment_request: `${baseUrl}/api/deposit-request`,
   registration_bonus: `${baseUrl}/api/welcom-bonus`,
-  deposit_history: `${baseUrl}/api/deposit-history`,
-  withdrawl_history: `${baseUrl}/api/withdrawl-history`,
+  deposit_history: `${newdomain}/api/v1/deposit-history-inr`,
+  withdrawl_history: `${newdomain}/api/v1/withdrawal-history-inr`,
   payment_deposite: `${newdomain}/api/v1/payin-request`,
 
   // deposit_bonus: `${baseUrl}/api/deposit-bonus`,
-
   // referral_bonus: `${baseUrl}/api/refral-bonus`,
+
   daily_self_bet_income: `${baseUrl}/api/daily-self-bet-income`,
   daily_wallet_income: `${baseUrl}/api/daily-wallet-income`,
   daily_salary_income: `${newdomain1}/api/v1/daily-salary-icome`,
   weekly_salary_income: `${newdomain1}/api/v1/weekly-salary-icome`,
   team_reward_bonus: `${baseUrl}/api/team-reward-bonus`,
   team_trading_bonus: `${newdomain}/api/v1/level-income`,
-  add_bank_details: `${baseUrl}/api/bank-add`,
-  get_bank_list: `${baseUrl}/api/user-bank-details`,
+  add_bank_details: `${newdomain}/api/v1/bank-add`,
+  get_bank_list: `${newdomain}/api/v1/user-bank-details`,
   all_withdrawl_user_list: `${baseUrl}/api/widthrol-user-list`,
   recharge_call_bakc: `${baseUrl}/api/deposits-user-request`,
   cricket_get_url_id_pass: `${baseUrl}/api/cricket-details`,
@@ -113,4 +115,19 @@ export const endpoint = {
   tranfer_wallet: `${newdomain1}/api/v1/transfer-amount-from-working-wallet-to-main-wallet`,
   transfer_wallet_history: `${newdomain1}/api/v1/transfer-history-from-working-wallet-to-main-wallet`,
   yesterday_income: `${newdomain}/api/v1/get-total-betA-ad-income-yesterday`,
+  recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
+  refferral_recharge_income: `${newdomainn}/api/v1/getDirectReferral_Recharge_salary`,
+  get_level_general: `${newdomain1}/api/v1/get_level_general_data`,
+  get_team_refferal: `${newdomain1}/api/v1/getTeamReferral_First_Recharge_salary`,
+  
+  
+  node_api:{
+    get_leder_data:`${dummy_aviator}/api/v1/get-ledger-data`,
+    my_history: `${dummy_aviator}/api/v1/my-history-by-user-id`,
+    login_with_node:`${dummy_aviator}/api/v1/createuser`,
+    main_wallet:`${dummy_aviator}/main-wallet-to-aviator`,
+    aviator_main:`${dummy_aviator}/aviator-to-main-wallet`,
+    get_top_users: `${dummy_aviator}/api/v1/get-top-users`,
+  }
+
 };

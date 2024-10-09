@@ -1,21 +1,17 @@
-import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
   Container,
-  Dialog,
-  IconButton,
   Stack,
-  Typography,
+  Typography
 } from "@mui/material";
 import * as React from "react";
 import ReactApexChart from "react-apexcharts";
 import { useQuery } from "react-query";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
 import {
   bgdarkgray,
-  bglightgray,
-  zubggray
+  bglightgray
 } from "../../Shared/color";
 import logo1 from "../../assets/images/logotwhite.png";
 import deposite from "../../assets/images/new/download (10).png";
@@ -24,19 +20,10 @@ import wallettransfer from "../../assets/images/new/download (12).png";
 import wallettransfer1 from "../../assets/images/new/download (13).png";
 import d14 from "../../assets/images/new/download (14).png";
 import rechargeIcon from "../../assets/images/new/download (8).png";
-
-// import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import Layout from "../../component/Layout/Layout";
-import { walletamount, yesterdayFn } from "../../services/apicalling";
-import theme from "../../utils/theme";
-import MyModal from "../../Shared/Modal";
+import { walletamount } from "../../services/apicalling";
 
 function Wallet() {
-
-  const navigate = useNavigate();
-
-  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] =
-    React.useState(false);
 
   const { isLoading, data } = useQuery(["walletamount"], () => walletamount(), {
     refetchOnMount: false,
@@ -49,14 +36,6 @@ function Wallet() {
   const series = [(Number(Number(amount?.wallet || 0) % 100) || 0)?.toFixed(2),]
   const series2 = [(Number(Number(amount?.winning || 0) % 100) || 0)?.toFixed(2),];
   const series1 = [(Number(Number(amount?.working_wallet || 0) % 100) || 0)?.toFixed(2),];
-
-  const { data: status } = useQuery(["yesterday_income"], () => yesterdayFn(), {
-    refetchOnMount: false,
-    refetchOnReconnect: false,
-    refetchOnWindowFocus: false,
-  });
-
-  const statusyesterday = status?.data?.data
 
   const [options] = React.useState({
     colors: ["#D9AC4F", "red", "green"],
@@ -117,26 +96,7 @@ function Wallet() {
               width: '100%',
             }}
           >
-            {/* <div class="container">
-              <div class="circles">
-                <div class="circle circle-1"></div>
-                <div class="circle circle-2"></div>
-              </div>
-
-              <div class="card">
-                <div class="visa_logo">
-                  <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png" alt="" />
-                </div>
-                <div class="visa_info">
-                  <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" alt="" />
-                  <p>4586 7985 9271 6388</p>
-                </div>
-                <div class="visa_crinfo">
-                  <p>02/12</p>
-                  <p>Nikhil Bobade</p>
-                </div>
-              </div>
-            </div> */}
+           
             <Box
               sx={{
                 display: "flex",
@@ -242,7 +202,7 @@ function Wallet() {
                     color="initial"
                     sx={{ color: "white", fontWeight: "500" }}
                   >
-                    Bonus Amount
+                    Main Amount
                   </Typography>
                 </Box>
               </Box>
@@ -400,64 +360,10 @@ function Wallet() {
             </Box>
           </div>
         </Box>
-
-        {/* {openDialogBoxHomeBanner && (
-          <Dialog
-            PaperProps={{ width: "500px", height: "500px" }}
-            open={openDialogBoxHomeBanner}
-          >
-            <div>
-              <p>
-                <IconButton onClick={() => setopenDialogBoxHomeBanner(false)}>
-                  <CloseIcon />
-                </IconButton>
-              </p>
-              <p>
-                <img src={sunlotteryhomebanner} />
-              </p>
-            </div>
-          </Dialog>
-        )} */}
-        <CustomCircularProgress isLoading={isLoading} />
-        {statusyesterday?.status_of_deposit_popup === 1 ?
-           <MyModal /> 
-          : "" }
-
+           <CustomCircularProgress isLoading={isLoading} />
       </Container>
     </Layout>
   );
 }
 
 export default Wallet;
-
-const style = {
-  header: {
-    padding: "5px 8px",
-    background: theme.palette.primary.light,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    "& > p": {
-      fontSize: "20px",
-      fontWeight: "500",
-      textAlign: "center",
-      color: "white",
-    },
-    "& > a > svg": {
-      color: "white",
-      fontSize: "35px",
-    },
-  },
-  wthui: {
-    textAlign: "center",
-    width: "31%",
-    minHeight: "15vh",
-    background: zubggray,
-    borderRadius: "10px",
-    mb: "20px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    "&>div>p": { color: "white", fontWeight: 500 },
-  },
-};

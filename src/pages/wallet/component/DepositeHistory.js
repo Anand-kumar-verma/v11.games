@@ -1,6 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import {
   Box,
   Button,
@@ -12,9 +11,8 @@ import {
 import moment from "moment";
 import * as React from "react";
 import { useQuery } from "react-query";
-import { NavLink, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
-import { bgdarkgray, bggrad, bgtan, zubgback, zubgbackgrad, zubgmid, zubgtext } from "../../../Shared/color";
+import { bgdarkgray, bggrad, zubgtext } from "../../../Shared/color";
 import deposit from "../../../assets/check.png";
 import Layout from "../../../component/Layout/Layout";
 import {
@@ -23,10 +21,7 @@ import {
 import theme from "../../../utils/theme";
 
 function DepositeHistory() {
-  const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-  };
+
   const { isLoading, data } = useQuery(
     ["deposit_history"],
     () => depositHistoryFunction(),
@@ -179,7 +174,7 @@ function DepositeHistory() {
                     }}
                   >
                     <Typography variant="body1" color="initial">
-                      Trans number
+                      Transaction Hash
                     </Typography>
                     <Stack
                       direction="row"
@@ -210,89 +205,3 @@ function DepositeHistory() {
 }
 
 export default DepositeHistory;
-
-const style = {
-  header: {
-    padding: "15px 8px",
-    background: zubgtext,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    "& > p": {
-      fontSize: "20px",
-      fontWeight: "600",
-      textAlign: "center",
-      color: "white",
-    },
-    "& > a > svg": {
-      color: "white",
-      fontSize: "35px",
-    },
-  },
-  wthui: {
-    textAlign: "center",
-    width: "32%",
-    minHeight: "15vh",
-    background: zubgmid,
-    borderRadius: "10px",
-    mb: "10px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    "&>div>p": { color: "white" },
-  },
-  paymentlink: {
-    width: "32%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "15vh",
-    background: zubgmid,
-    borderRadius: "10px",
-    mb: "10px",
-    "&>p": {
-      color: "white",
-      fontSize: "12px",
-      fontWeight: "500",
-      textAlign: "center",
-      mt: "5px",
-    },
-  },
-  paymentBoxOuter: {
-    width: "95%",
-    margin: "auto",
-    my: "10px",
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  paytmbtn: {
-    mb: 2,
-    background: zubgback,
-    color: "white !important",
-    width: "31%",
-    border: "1px solid white",
-    padding: "10px",
-    "&:hover": { background: zubgbackgrad, border: "1px solid transparent" },
-  },
-  paytmbtntwo: {
-    borderRadius: "5px",
-    textTransform: "capitalize",
-    mb: 2,
-    background: zubgbackgrad,
-    color: "white !important",
-    width: "100%",
-    mt: 2,
-    border: "1px solid white",
-    padding: "10px",
-    "&:hover": { background: zubgbackgrad, border: "1px solid transparent" },
-  },
-  rechargeinstext: {
-    mb: "10px",
-    alignItems: "center",
-    justifyContent: "start",
-    "&>p": { marginLeft: "10px", color: "white !important", fontSize: "14px" },
-  },
-};

@@ -573,9 +573,9 @@ function DepositeUsdtrecharge() {
                     <div className="w-full flex justify-center mt-5">
                       <Button
                         size="small !py-1"
-                        className="!bg-[#0ee6ac]  !text-white place-items-center"
+                        className="!bg-[#754810]  !text-white place-items-center"
                         onClick={() =>
-                          functionTOCopy(selectedUPIDetails.m37_value)
+                          functionTOCopy(selectedUPIDetails?.usdt_address)
                         }
                       >
                         Copy
@@ -594,13 +594,13 @@ function DepositeUsdtrecharge() {
               onChange={handleFileChange}
               required
             />
-            <span className="text-white text-lg !mt-5">UTR Number</span>
+            <span className="text-white text-lg !mt-5">Transaction Hash</span>
             <TextField
               id="utr_no"
               name="utr_no"
               value={fk.values.utr_no}
               onChange={fk.handleChange}
-              placeholder="Enter UTR NO"
+              placeholder="Enter Transaction Hash"
               className="!w-[100%] !bg-[#D9AC4F] !text-[#8f5206] !mt-2"
               size="small"
             ></TextField>

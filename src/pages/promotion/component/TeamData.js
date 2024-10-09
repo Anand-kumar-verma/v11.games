@@ -51,14 +51,14 @@ function TeamData() {
         </Box>
         {
 
-          <Accordion className="!rounded-lg">
+          <Accordion className="!rounded-lg !mx-2">
             <AccordionSummary
               aria-controls="panel1-content"
               id="panel1-header"
               sx={{ background: bggold, color: "white", mt: 2, }}
               className="!rounded-lg"
             >
-              <div className="w-full grid grid-cols-3 pr-2">
+              <div className="w-full flex justify-between pr-2">
                 <span className="">Levels</span>
                 <p className="">Members</p>
                 <p className="">Deposit Amount</p>
@@ -76,9 +76,9 @@ function TeamData() {
                   id="panel1-header"
                   sx={{ background: theme.palette.secondary.light, color: "white", borderRadius: '0px' }}
                 >
-                  <div className="w-full grid grid-cols-3 pr-2">
+                  <div className="w-full flex justify-between pr-2">
                     <span className="">Level: {i}</span>
-                    <p className="">{result?.filter((j) => j?.LEVEL === i)?.length}
+                    <p className="!pr-10">{result?.filter((j) => j?.LEVEL === i)?.length}
                     </p>
                     <p className="">
                       {rupees}{" "}
@@ -91,18 +91,18 @@ function TeamData() {
                 <AccordionDetails sx={{ background: theme.palette.secondary.light, color: "white" }}>
                   <Box >
                     <Box sx={style.accordian}>
-                      <div style={{ color: 'white', }} className="!grid !grid-cols-3    ">
+                      <div style={{ color: 'white', }} className="flex justify-between px-5  ">
                         <span>S.No.</span>
-                        <span>User Id</span>
+                        <span>User Name </span>
                         <span className="">Name</span>
                       </div>
                       <div className="h-[2px] w-full "></div>
                       {result?.filter((j) => j?.LEVEL === i)?.map((i, index) => {
                         return (
-                          <div style={{ color: 'white', background: bggrad, color: bgtan, borderRadius: '5px', padding: '10px 20px', }} className="!grid !grid-cols-3  ">
+                          <div style={{ color: 'white', background: bggrad, color: bgtan, borderRadius: '5px', padding: '10px 10px', }} className="flex justify-start gap-14">
                             <span>{index + 1}</span>
                             <span className=" ">
-                              {i?.id || "No data found"}
+                              {i?.username || "No data found"}
                             </span>
                             <span className=" ">
                               {i?.full_name || "No data found"}

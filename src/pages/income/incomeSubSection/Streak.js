@@ -18,6 +18,7 @@ import { bgdarkgray, bgtan, zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtex
 import nodatafoundimage from "../../../assets/images/nodatafoundimage.png";
 import Layout from "../../../component/Layout/Layout";
 import {
+  ReferralrechargeIncomeFn,
   StreakIncomeFn
 } from "../../../services/apicalling";
 
@@ -31,8 +32,8 @@ function StreakBonus() {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const { isLoading, data } = useQuery(
-    ["streak_bonus"],
-    () => StreakIncomeFn(),
+    ["referral_recharge"],
+    () => ReferralrechargeIncomeFn(),
     {
       refetchOnMount: false,
       refetchOnReconnect: false,
@@ -76,7 +77,7 @@ refetchOnWindowFocus:false
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon style={{ color: bgtan }} />
             </Box>
-            <p style={{ color: bgtan }}>Streak  Income</p>
+            <p style={{ color: bgtan }}>Referral Recharge Salary</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -100,7 +101,7 @@ refetchOnWindowFocus:false
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Streak Income</p>
+          <p style={{ color: bgtan }}>Referral Recharge Salary</p>
           <Box></Box>
         </Box>
         <div className="!overflow-x-auto" style={{ width: "95%", marginLeft: '2.5%', marginTop: '16px', }}>

@@ -20,30 +20,35 @@ function MainPageOFIncome() {
       name: "Welcome Bonus",
       logo: <PriceCheckIcon className="!w-[40px] !h-[40px] " color="black" />,
     },
+    {
+      to: "/account/income-main/recharge-bonus",
+      name: "Direct Referral Recharge Salary Income",
+      logo: <RedeemIcon className="!w-[40px] !h-[40px] " color="black" />,
+    },
     // {
-    //   to: "/account/income-main/claim-bonus",
-    //   name: "Invitation Income",
-    //   logo: <RedeemIcon className="!w-[40px] !h-[40px] " color="black" />,
-    // },
-    // {
-    //    to: "/account/income-main/streak-bonus",
-    //   name: "Winning Streak Income",
+    //    to: "/account/income-main/referral_recharge",
+    //   name: "Referral Recharge Salary",
     //   logo: <PriceCheckIcon className="!w-[40px] !h-[40px] " color="black" />,
     // },
-    {
-        to: "/account/income-main/vip-bonus",
-        name: "VIP Income",
-        logo: <AccountBalanceIcon className="!w-[40px] !h-[40px] " color="black" />,
-      },
+    // {
+    //     to: "/account/income-main/vip-bonus",
+    //     name: "VIP Income",
+    //     logo: <AccountBalanceIcon className="!w-[40px] !h-[40px] " color="black" />,
+    //   },
        {
       to: "/account/income-main/daily-salary-bonus",
-      name: "Daily Salary",
+      name: "Daily Salary Income",
       logo: <StoreIcon className="!w-[40px] !h-[40px] " color="black" />,
     },
     {
       to: "/account/income-main/deposit-bonus",
-      name: "Deposit Self Income",
+      name: "Self Deposit  Bonus",
       logo: <Diversity2Outlined className="!w-[40px] !h-[40px] " color="black" />,
+    },
+      {
+      to: "/account/income-main/team-trading-bonus",
+      name: "Level Play Bonus",
+      logo: <RedeemIcon className="!w-[40px] !h-[40px] " color="black" />,
     },
     //  {
     //   to: "/account/income-main/claim-bonus",
@@ -76,11 +81,11 @@ function MainPageOFIncome() {
     //   name: "Level Income",
     //   logo: <CardGiftcardIcon className="!w-[40px] !h-[40px] " color="black" />,
     // },
-    // {
-    //   to: "/account/income-main/cash_back_report",
-    //   name: "Cashback Income",
-    //   logo: <StoreIcon className="!w-[40px] !h-[40px] !text-white" color="#8f5206" sx={{ filter: 'invert(1)' }} />,
-    // },
+    {
+      to: "/account/income-main/cash_back_report",
+      name: "Referral First Recharge Bonus",
+      logo: <StoreIcon className="!w-[40px] !h-[40px] !text-white" color="#8f5206" sx={{ filter: 'invert(1)' }} />,
+    },
   ];
 
   return (

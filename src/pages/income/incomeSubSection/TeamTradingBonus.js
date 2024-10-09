@@ -96,7 +96,7 @@ function TeamTradingBonus() {
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
             </Box>
-            <p style={{ color: bgtan }}>Level Income</p>
+            <p style={{ color: bgtan }}>Level Play Bonus</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -121,7 +121,7 @@ function TeamTradingBonus() {
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Level Income</p>
+          <p style={{ color: bgtan }}>Level Play Bonus</p>
           <Box></Box>
         </Box>
         <div

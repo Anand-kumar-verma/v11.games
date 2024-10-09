@@ -1,37 +1,31 @@
 import { ArrowForwardIos, CopyAll } from '@mui/icons-material';
 import CachedIcon from "@mui/icons-material/Cached";
-import CloseIcon from "@mui/icons-material/Close";
-import { Box, Button, Container, Dialog, IconButton, Stack, Typography, } from "@mui/material";
+import { Box, Button, Container, IconButton, Stack, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
 import { bgdarkgray, bggold, bglightgray, bgtan, zubgtext } from "../../Shared/color";
+import bep from "../../assets/images/bep20token_nadcab.png";
 import c1 from "../../assets/images/c1.png";
 import depo from "../../assets/images/depo.png";
 import f1 from "../../assets/images/f1.png";
-import game from "../../assets/images/game.png";
-import g from "../../assets/images/gift.png";
 import lang from "../../assets/images/lang.png";
 import n1 from "../../assets/images/n1.png";
 import not from "../../assets/images/not.png";
-import a1 from "../../assets/images/password (1).png";
 import dp1 from "../../assets/images/pr.png";
 import star from "../../assets/images/star.png";
 import vip from "../../assets/images/vip.png";
 import wit from "../../assets/images/witt.png";
-import trc from "../../assets/images/tether-usdt-logo-FA55C7F397-seeklogo.com.png";
-import bep from "../../assets/images/bep20token_nadcab.png";
-import edit from "../../assets/images/vipicon.png";
 import wtd from "../../assets/rechargeIcon.png";
-// import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import s from "../../assets/wdhistory.png";
 import dpt from "../../assets/withdrow.png";
 import Layout from "../../component/Layout/Layout";
 import { walletamount } from "../../services/apicalling";
 import { baseUrl, fron_end_main_domain } from "../../services/urls";
-import MyModal from '../../Shared/Modal';
+import copy from "clipboard-copy";
+import toast from 'react-hot-toast';
 
 function Account() {
   const [opend, setOpend] = useState(false);
@@ -40,8 +34,10 @@ function Account() {
   const transactionId = searchParams?.get("order_id");
   const client = useQueryClient();
   const navigate = useNavigate();
-  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] = useState(false);
-
+  const functionTOCopy = (value) => {
+    copy(value);
+    toast.success("Copied to clipboard!");
+  }; 
   const { isLoading, data: amount } = useQuery(["walletamount"], () => walletamount(), {
     refetchOnMount: false,
     refetchOnReconnect: true,
@@ -91,14 +87,14 @@ function Account() {
               <Box className="flex flex-col ">
                 <Box className="flex justify-start items-center mt-5">
                   <Typography sx={{ color: bgtan, fontWeight: '700', }}>{wallet?.full_name}</Typography>
-                  <Typography>
+                  {/* <Typography>
                     <img src={vip} alt="" className=" w-12 ml-3" />
-                  </Typography>
+                  </Typography> */}
                 </Box>
-                <Box className=" w-40 h-6 rounded-full p-1   realtive !left-40 flex gap-3 justify-center" sx={{ background: bgtan }}>
+                <Box className="  h-6 rounded-full p-1   realtive !left-40 flex gap-3 justify-center" sx={{ background: bgtan }}>
                   <Typography className="text-white !text-xs">UID </Typography>
                   <Typography className="text-white !text-xs">| </Typography>
-                  <Typography className="text-white !text-xs">{wallet?.username || 0}{" "}<CopyAll fontSize="small" /> </Typography>
+                  <Typography className="text-white !text-xs">{wallet?.username || 0}{" "}<CopyAll className='!cursor-pointer' fontSize="small" onClick={() => functionTOCopy(wallet?.username)}/> </Typography>
                 </Box>
                 <p style={{ color: 'white', marginTop: '2px' }}>
                   Mobile No :  {wallet?.mob_no || 0}{" "}
@@ -109,7 +105,7 @@ function Account() {
           </Container>
         </Box>
         <Box sx={{ position: 'relative', height: '233px', }}>
-          <Box sx={{ ...style.actionContainer, position: 'absolute', left: '2.5%', bottom: '24%' }}>
+          <Box sx={{ ...style.actionContainer, position: 'absolute', left: '2.5%', bottom: '45%' }}>
             <Box sx={{ borderBottom: '1px solid #5b5858', paddingBottom: '10px', mb: 2, }}>
               <Typography variant="body1" color="initial" sx={style.balanceText}>
                 Total Balance
@@ -148,28 +144,18 @@ function Account() {
                   Withdraw
                 </Typography>
               </Box>
-              <Box sx={style.actionBox} component={NavLink} to="/vip">
-                <Box component="img" src={edit} sx={style.actionImage} />
+              <Box sx={style.actionBox} component={NavLink} to="/wallet/Recharge">
+                <Box component="img" src={bep} sx={style.actionImage} />
                 <Typography variant="body1" color="initial" sx={style.actionText}>
-                  vip level
+                USDT Bep20
                 </Typography>
               </Box>
-              <Box sx={style.actionBox2} component={NavLink} to="/vip" mt={2}>
-                <Box component="img" src={trc} sx={style.actionImage2} />
-                <Typography variant="body1" color="initial" sx={style.actionText2}>
-                  USDT TRC 20
-                </Typography>
-              </Box>
-              <Box sx={style.actionBox2} component={NavLink} to="/vip" mt={2}>
-                <Box component="img" src={bep} sx={style.actionImage2} />
-                <Typography variant="body1" color="initial" sx={style.actionText2}>
-                  USDT BEP 20
-                </Typography>
-              </Box>
+             
+           
             </Box>
           </Box>
         </Box>
-        <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-40px', width: '95%', ml: '2.5%', }}>
+        <Box className="grid grid-cols-2 gap-3 " sx={{ mt: '-90px', width: '95%', ml: '2.5%', }}>
           <NavLink to="/depositHistory">
             <Box className="flex gap-1 p-1 py-4 justify-center items-center shadow-xl  rounded-lg" sx={{ background: bglightgray }}>
               <Typography><img src={depo} alt="" className="w-10" /></Typography>
@@ -240,9 +226,7 @@ function Account() {
               borderRadius: "10px",
             }}
           >
-            
-          
-          </Stack>
+           </Stack>
         </Box>
         <Box
           sx={{
@@ -262,9 +246,7 @@ function Account() {
             Logout
           </Button>
         </Box>
-    
         <CustomCircularProgress isLoading={isLoading} />
-      
       </Container>
     </Layout>
   );

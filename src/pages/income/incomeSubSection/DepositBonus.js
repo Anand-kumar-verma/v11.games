@@ -78,7 +78,7 @@ function DepositBonus() {
             <Box component={NavLink} onClick={goBack}>
               <KeyboardArrowLeftOutlinedIcon />
             </Box>
-            <p>Deposit Self Income</p>
+            <p> Self Deposit  Bonus</p>
           </Box>
           <div>
             <img className="" src={nodatafoundimage} />
@@ -103,7 +103,7 @@ function DepositBonus() {
           <Box component={NavLink} onClick={goBack}>
             <KeyboardArrowLeftOutlinedIcon sx={{ color: bgtan }} />
           </Box>
-          <p style={{ color: bgtan }}>Deposit Self Income</p>
+          <p style={{ color: bgtan }}>Self Deposit  Bonus</p>
           <Box></Box>
         </Box>
         <div className="!overflow-x-auto" style={{ width: "95%", marginLeft: '2.5%', marginTop: '16px', }}>
