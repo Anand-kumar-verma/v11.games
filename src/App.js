@@ -1,19 +1,17 @@
+import { Box } from "@mui/material";
 import CryptoJS from "crypto-js";
 import { Route, Routes } from "react-router-dom";
 import "../src/index.css";
 import "./App.css";
 import "./assets/styles/main.css";
-import ForgetPassword from "./pages/auth/login/ForgetPassword";
-import Login from "./pages/auth/login/Login";
-import Register from "./pages/auth/register/Register";
-import { routes } from "./routes";
-import { Box, Fab } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import { Draggable } from 'react-draggable';
-import Otpverify from "./pages/auth/login/Otpverify";
-import Changepassword from "./pages/auth/login/Changepassword";
 import LayoutAviator from "./GamePage/Layout";
 import PlayGame from "./GamePage/PlayGame";
+import Changepassword from "./pages/auth/login/Changepassword";
+import ForgetPassword from "./pages/auth/login/ForgetPassword";
+import Login from "./pages/auth/login/Login";
+import Otpverify from "./pages/auth/login/Otpverify";
+import Register from "./pages/auth/register/Register";
+import { routes } from "./routes";
 
 const App = () => {
   const isAuthenticated =
@@ -38,14 +36,18 @@ const App = () => {
         <Route path="/changepassword" element={<Changepassword />} />
         <Route path="/register" element={<Register />} />
         <Route
-        path="/playgame"
-        element={<LayoutAviator component={<PlayGame />} />}
-      />
+          path="/playgame"
+          element={<LayoutAviator component={<PlayGame />} />}
+        />
 
         {isAuthenticated ? (
           routes?.map((route, index) => {
             return (
-              <Route key={index} path={route?.path} element={route?.component} />
+              <Route
+                key={index}
+                path={route?.path}
+                element={route?.component}
+              />
             );
           })
         ) : (

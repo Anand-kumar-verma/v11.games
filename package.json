@@ -19,6 +19,7 @@
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.12",
     "device-uuid": "^1.0.4",
+    "ethers": "^5.7.2",
     "formik": "^2.4.5",
     "jspdf-autotable": "^3.8.3",
     "moment": "^2.30.1",

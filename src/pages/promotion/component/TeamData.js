@@ -1,6 +1,5 @@
 
 
-import { Star } from "@mui/icons-material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import { Box, Container, Typography } from "@mui/material";
@@ -11,7 +10,7 @@ import * as React from "react";
 import { useQuery } from "react-query";
 import { NavLink } from "react-router-dom";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
-import { bgdarkgray, bggold, bggrad, bgtan, zubgback, zubgtext, zubgwhite } from "../../../Shared/color";
+import { bggold, bggrad, bgtan, zubgback, zubgtext, zubgwhite } from "../../../Shared/color";
 import Layout from "../../../component/Layout/Layout";
 import { MygetdataFn } from "../../../services/apicalling";
 import { rupees } from "../../../services/urls";
